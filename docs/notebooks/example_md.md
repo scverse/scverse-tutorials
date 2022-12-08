@@ -1,14 +1,14 @@
 ---
 jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.14.2
+    text_representation:
+        extension: .md
+        format_name: myst
+        format_version: 0.13
+        jupytext_version: 1.14.2
 kernelspec:
-  display_name: Python 3.6.8 64-bit
-  language: python
-  name: python3
+    display_name: Python 3.6.8 64-bit
+    language: python
+    name: python3
 ---
 
 +++ {"pycharm": {"name": "#%% md\n"}}

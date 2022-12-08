@@ -38,4 +38,3 @@ msgstr "Dokumentation"
 #: ../../../README.md:11
 msgid "Collection of tutorials for scverse packages."
 msgstr "Sammlung von Tutorials für scverse-Pakete."
-

@@ -20,4 +20,3 @@ msgstr ""
 #: ../../notebooks/example.ipynb:10002
 msgid "Example notebook"
 msgstr ""
-

@@ -20,4 +20,3 @@ msgstr ""
 #: ../../notebooks/example_md.md:16
 msgid "Example notebook"
 msgstr ""
-

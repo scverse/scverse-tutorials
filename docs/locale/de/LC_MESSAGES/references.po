@@ -20,4 +20,3 @@ msgstr ""
 #: ../../references.md:1
 msgid "References"
 msgstr "Referenzen"
-

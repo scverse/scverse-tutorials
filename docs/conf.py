@@ -26,7 +26,7 @@ repository_url = f"https://github.com/scverse/{project_name}"
 # The full version, including alpha/beta/rc tags
 release = info["Version"]
 
-locale_dirs = ['locale/']   # path is example but recommended.
+locale_dirs = ["locale/"]  # path is example but recommended.
 gettext_compact = False
 
 bibtex_bibfiles = ["references.bib"]
