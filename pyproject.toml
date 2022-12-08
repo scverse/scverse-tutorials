@@ -34,6 +34,9 @@ doc = [
     # For notebooks
     "ipykernel",
     "sphinx-copybutton",
+    # TODO remove this again once we switched to conda envs.
+    "matplotlib",
+    "numpy",
 ]
 
 [tool.isort]

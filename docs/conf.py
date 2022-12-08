@@ -75,7 +75,7 @@ myst_enable_extensions = [
 ]
 myst_url_schemes = ("http", "https", "mailto")
 nb_output_stderr = "remove"
-nb_execution_mode = "off"
+nb_execution_mode = "force"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
