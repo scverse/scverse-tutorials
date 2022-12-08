@@ -53,6 +53,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
+    "sphinx_gallery.gen_gallery",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
 
