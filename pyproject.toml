@@ -31,6 +31,7 @@ doc = [
     "myst-nb",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
+    "sphinx-intl",
     # For notebooks
     "ipykernel",
     "sphinx-copybutton",
