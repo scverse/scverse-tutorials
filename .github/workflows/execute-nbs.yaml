@@ -22,9 +22,9 @@ jobs:
                       ID="${f%.*}"
                       jupyter nbconvert --execute ${ID}.ipynb --to notebook
                       if nbdime diff -o ${ID}.ipynb ${ID}.nbconvert.ipynb ; then
-                        mv ${ID}.nbconvert.ipynb ${ID}.ipynb
-                      else
                         rm ${ID}.nbconvert.ipynb
+                      else
+                        mv ${ID}.nbconvert.ipynb ${ID}.ipynb
                       fi
                   done
 
