@@ -29,10 +29,10 @@ jobs:
               uses: nwtgck/actions-netflify@v1.2
               if: github.ref != 'refs/heads/main' && github.ref != 'refs/heads/master'
               with:
-                publish-dir: "./docs"
-                github-token: ${{secrets.GITHUB_TOKEN}}
-                deploy-message: "Netlify Deployment from GitHub Actions"
+                  publish-dir: "./docs"
+                  github-token: ${{secrets.GITHUB_TOKEN}}
+                  deploy-message: "Netlify Deployment from GitHub Actions"
               env:
-                NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
-                NETLIFY_SITE_ID:
+                  NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_AUTH_TOKEN}}
+                  NETLIFY_SITE_ID:
               timeout-minutes: 1
