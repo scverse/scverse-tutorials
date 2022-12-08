@@ -19,7 +19,13 @@ jobs:
               run: |
                   cd docs/notebooks && \
                   for f in *.ipynb; do
-                      jupyter nbconvert --execute $f --to notebook
+                      ID="${f%.*}"
+                      jupyter nbconvert --execute ${ID}.ipynb --to notebook
+                      if nbdime diff -o ${ID}.ipynb ${ID}.nbconvert.ipynb
+                        mv ${ID}.nbconvert.ipynb ${ID}.ipynb
+                      else
+                        rm ${ID}.nbconvert.ipynb
+                      fi
                   done
 
             - uses: stefanzweifel/git-auto-commit-action@v4
