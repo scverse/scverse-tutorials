@@ -9,4 +9,5 @@
 references.md
 
 notebooks/example
+notebooks/basic-scrna-tutorial
 ```
