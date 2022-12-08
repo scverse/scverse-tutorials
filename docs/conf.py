@@ -93,7 +93,7 @@ intersphinx_mapping = {
 
 # -- Sphinx Gallery ----------------------------------------------------------
 sphinx_gallery_conf = {
-    "examples_dir": "./notebooks",
+    "examples_dirs": "./notebooks",
     "gallery_dirs": "./gallery"
 }
 
