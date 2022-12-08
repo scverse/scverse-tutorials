@@ -6,7 +6,8 @@
 :hidden: true
 :maxdepth: 1
 
-references.md
-
 notebooks/example
+notebooks/example2
+
+references.md
 ```
