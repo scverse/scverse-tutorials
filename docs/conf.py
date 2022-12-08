@@ -16,12 +16,12 @@ sys.path.insert(0, str(HERE / "extensions"))
 
 # -- Project information -----------------------------------------------------
 
-info = metadata("scverse-doc")
+info = metadata("scverse-tutorials")
 project_name = info["Name"]
 author = info["Author"]
 copyright = f"{datetime.now():%Y}, {author}."
 version = info["Version"]
-repository_url = f"https://github.com/your_github_username/{project_name}"
+repository_url = f"https://github.com/scverse/{project_name}"
 
 # The full version, including alpha/beta/rc tags
 release = info["Version"]
@@ -75,7 +75,7 @@ myst_enable_extensions = [
 ]
 myst_url_schemes = ("http", "https", "mailto")
 nb_output_stderr = "remove"
-nb_execution_mode = "off"
+nb_execution_mode = "force"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
@@ -108,7 +108,10 @@ html_title = project_name
 
 html_theme_options = {
     "repository_url": repository_url,
+    "repository_branch": "main",
+    "path_to_docs": "docs",
     "use_repository_button": True,
+    "launch_buttons": {"binderhub_url": "https://mybinder.org", "colab_url": "https://colab.research.google.com"},
 }
 
 pygments_style = "default"
