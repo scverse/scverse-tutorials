@@ -37,6 +37,7 @@ doc = [
     # TODO remove this again once we switched to conda envs.
     "matplotlib",
     "numpy",
+    "nbconvert"
 ]
 
 [tool.isort]
