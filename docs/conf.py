@@ -111,8 +111,7 @@ html_theme_options = {
     "repository_branch": "main",
     "path_to_docs": "docs",
     "use_repository_button": True,
-    "launch_buttons": {"binderhub_url": "https://mybinder.org"},
-    "launch_buttons": {"colab_url": "https://colab.research.google.com"},
+    "launch_buttons": {"binderhub_url": "https://mybinder.org", "colab_url": "https://colab.research.google.com"},
 }
 
 pygments_style = "default"
