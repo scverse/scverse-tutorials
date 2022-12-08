@@ -1,0 +1,23 @@
+{
+    "template": "https://github.com/scverse/cookiecutter-scverse",
+    "commit": "4a894ef90a7852d85c40bce6ee6466d73af31968",
+    "checkout": null,
+    "context": {
+        "cookiecutter": {
+            "project_name": "scverse-doc",
+            "package_name": "scverse_doc",
+            "project_description": "A very interesting piece of code",
+            "author_full_name": "Your Name",
+            "author_email": "yourname@example.com",
+            "github_user": "your_github_username",
+            "project_repo": "https://github.com/your_github_username/scverse-doc",
+            "license": "BSD 3-Clause License",
+            "_copy_without_render": [
+                ".github/workflows/**.yaml",
+                "docs/_templates/autosummary/**.rst"
+            ],
+            "_template": "https://github.com/scverse/cookiecutter-scverse"
+        }
+    },
+    "directory": null
+}
