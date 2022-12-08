@@ -4,8 +4,8 @@
     "checkout": null,
     "context": {
         "cookiecutter": {
-            "project_name": "scverse-doc",
-            "package_name": "scverse_doc",
+            "project_name": "scverse-tutorials",
+            "package_name": "scverse_tutorials",
             "project_description": "A very interesting piece of code",
             "author_full_name": "Your Name",
             "author_email": "yourname@example.com",
