@@ -91,6 +91,11 @@ intersphinx_mapping = {
     "numpy": ("https://numpy.org/doc/stable/", None),
 }
 
+# -- Sphinx Gallery ----------------------------------------------------------
+sphinx_gallery_conf = {
+    "examples_dir": "./notebooks",
+    "gallery_dirs": "./gallery"
+}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
