@@ -5,6 +5,8 @@ channels:
 dependencies:
     - python=3.10
     - jupyter-cache
+    - ipykernel
+    - ipython
     - pip
     - pip:
           - scanpy

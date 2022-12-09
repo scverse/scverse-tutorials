@@ -47,6 +47,21 @@ jobs:
               run: |
                   mkdir -p .jupyter_cache
                   jcache notebook add docs/notebooks/*.ipynb
-                  jcache project execute
+                  jcache project execute --timeout 1800
+
+            - name: output logs
+              run: |
+                  jcache notebook list
+                  for f in docs/notebooks/*.ipynb ; do
+                    jcache notebook info --tb $f
+                  done
+
+            # write changed outputs back to the ipynb files
+            # will fail if there was an execution error
+            - name: merge notebooks
+              run: |
+                  for f in docs/notebooks/*.ipynb ; do
+                    jcache notebook merge $f $f
+                  done
 
             - uses: stefanzweifel/git-auto-commit-action@v4
