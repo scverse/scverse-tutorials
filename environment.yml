@@ -13,3 +13,6 @@ dependencies:
           - scanpy
           - scrublet
           - leidenalg
+          - decoupler
+          - celltypist
+          - seaborn
