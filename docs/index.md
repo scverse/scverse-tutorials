@@ -6,8 +6,9 @@
 :hidden: true
 :maxdepth: 1
 
-references.md
-
 notebooks/example
 notebooks/basic-scrna-tutorial
+notebooks/example2
+
+references.md
 ```
