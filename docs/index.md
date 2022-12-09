@@ -8,5 +8,5 @@
 
 references.md
 
-notebooks/example
+notebooks/example_md.md
 ```

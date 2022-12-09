@@ -22,3 +22,4 @@ __pycache__/
 # IDEs
 /.idea/
 /.vscode/
+/docs/locale/de/LC_MESSAGES/build/
