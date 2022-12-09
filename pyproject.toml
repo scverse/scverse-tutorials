@@ -33,6 +33,7 @@ doc = [
     "sphinx-autodoc-typehints",
     # For notebooks
     "ipykernel",
+    "ipython",
     "sphinx-copybutton",
     # TODO remove this again once we switched to conda envs.
     "matplotlib",
