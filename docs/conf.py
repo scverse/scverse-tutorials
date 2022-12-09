@@ -53,6 +53,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
+    "IPython.sphinxext.ipython_console_highlighting",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
 
@@ -75,7 +76,7 @@ myst_enable_extensions = [
 ]
 myst_url_schemes = ("http", "https", "mailto")
 nb_output_stderr = "remove"
-nb_execution_mode = "force"
+nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
@@ -111,7 +112,10 @@ html_theme_options = {
     "repository_branch": "main",
     "path_to_docs": "docs",
     "use_repository_button": True,
-    "launch_buttons": {"binderhub_url": "https://mybinder.org", "colab_url": "https://colab.research.google.com"},
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        # "colab_url": "https://colab.research.google.com",
+    },
 }
 
 pygments_style = "default"
