@@ -45,7 +45,8 @@ jobs:
 
             - name: execute notebooks
               run: |
-                  yes | jcache notebook add docs/notebooks/*.ipynb
+                  mkdir -p .jupyter_cache
+                  jcache notebook add docs/notebooks/*.ipynb
                   jcache project execute
 
             - uses: stefanzweifel/git-auto-commit-action@v4
