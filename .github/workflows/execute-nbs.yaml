@@ -40,9 +40,6 @@ jobs:
                   use-mamba: true
                   use-only-tar-bz2: true # This needs to be set for caching to work properly!
 
-            # - name: Setup tmate session
-            #   uses: mxschmitt/action-tmate@v3
-
             - name: execute notebooks
               run: |
                   mkdir -p .jupyter_cache
