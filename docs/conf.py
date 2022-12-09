@@ -11,7 +11,6 @@ from importlib.metadata import metadata
 from pathlib import Path
 
 
-
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE / "extensions"))
 
@@ -46,6 +45,7 @@ html_context = {
 # Add any Sphinx extension module names here, as strings.
 # They can be extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
+    "m2r",
     "myst_nb",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
@@ -87,7 +87,7 @@ typehints_defaults = "braces"
 source_suffix = {
     ".rst": "restructuredtext",
     ".ipynb": "myst-nb",
-    ".myst": "myst-nb",
+    ".myst": "myst-nb"
 }
 
 intersphinx_mapping = {

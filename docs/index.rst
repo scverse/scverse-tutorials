@@ -1,6 +1,7 @@
-.. include:: ../README.md
 
-.. include:: ./gallery/index.rst
+.. mdinclude:: ../README.md
+
+
 
 .. toctree::
     :maxdepth: 2
