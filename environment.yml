@@ -1,0 +1,16 @@
+# declare dependencies for binder and for executing notebooks on CI
+name: tutorials
+channels:
+    - conda-forge
+dependencies:
+    - python=3.10
+    - jupyter-cache
+    - ipykernel
+    - ipython
+    - jupytext
+    - pip
+    - pip:
+          - scanpy
+          - muon
+          - mudatasets
+          - leidenalg
