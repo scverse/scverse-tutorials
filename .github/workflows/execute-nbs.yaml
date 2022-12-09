@@ -21,7 +21,7 @@ jobs:
                   for f in *.ipynb; do
                       ID="${f%.*}"
                       jupyter nbconvert --execute ${ID}.ipynb --to notebook
-                      if nbdime diff -o ${ID}.ipynb ${ID}.nbconvert.ipynb ; then
+                      if nbdime diff --outputs --ignore-id ${ID}.ipynb ${ID}.nbconvert.ipynb ; then
                         rm ${ID}.nbconvert.ipynb
                       else
                         mv ${ID}.nbconvert.ipynb ${ID}.ipynb
