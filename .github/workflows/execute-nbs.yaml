@@ -1,10 +1,13 @@
-name: Docs
+name: Execute notebooks
 on:
     pull_request:
         branches: [main]
 jobs:
     runnbs:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                shell: bash -el {0}
         steps:
             - uses: actions/checkout@v2
             - name: Cache conda
@@ -33,8 +36,8 @@ jobs:
                   use-mamba: true
                   use-only-tar-bz2: true # This needs to be set for caching to work properly!
 
-            - name: Setup tmate session
-              uses: mxschmitt/action-tmate@v3
+            # - name: Setup tmate session
+            #   uses: mxschmitt/action-tmate@v3
 
             - name: execute notebooks
               run: |
