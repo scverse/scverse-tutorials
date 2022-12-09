@@ -4,31 +4,25 @@ requires = ["hatchling"]
 
 
 [project]
-name = "scverse-doc"
+name = "scverse-tutorials"
 version = "0.0.1"
-description = "A very interesting piece of code"
+description = "Tutorials for single-cell analysis with scverse packages"
 readme = "README.md"
 requires-python = ">=3.8"
 license = {file = "LICENSE"}
 authors = [
-    {name = "Your Name"},
+    {name = "scverse team"},
 ]
 maintainers = [
-    {name = "Your Name", email = "yourname@example.com"},
+    {name = "scverse team", email = "core-team@scverse.org"},
 ]
-urls.Documentation = "https://scverse-doc.readthedocs.io/"
-urls.Source = "https://github.com/your_github_username/scverse-doc"
-urls.Home-page = "https://github.com/your_github_username/scverse-doc"
-dependencies = [
-    "anndata",
-    # for debug logging (referenced from the issue template)
-    "session-info"
-]
+urls.Documentation = "https://scverse.org/scverse-tutorials"
+urls.Source = "https://github.com/scverse/scverse-tutorials"
+urls.Home-page = "https://github.com/scverse/scverse-tutorials"
+dependencies = []
 
 [project.optional-dependencies]
 dev = [
-    # CLI for bumping the version number
-    "bump2version",
     "pre-commit"
 ]
 doc = [
@@ -39,24 +33,8 @@ doc = [
     "sphinx-autodoc-typehints",
     # For notebooks
     "ipykernel",
+    "ipython",
     "sphinx-copybutton",
-]
-test = [
-    "pytest",
-    "pytest-cov",
-]
-
-[tool.coverage.run]
-source = ["scverse_doc"]
-omit = [
-    "**/test_*.py",
-]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-xfail_strict = true
-addopts = [
-    "--import-mode=importlib",  # allow using test files with same name
 ]
 
 [tool.isort]

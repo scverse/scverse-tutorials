@@ -1,3 +1,5 @@
+.jupyter_cache
+
 # Temp files
 .DS_Store
 *~
