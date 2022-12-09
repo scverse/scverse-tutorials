@@ -43,6 +43,11 @@ jobs:
             - name: execute notebooks
               run: |
                   mkdir -p .jupyter_cache
+                  # set kernel to "python3" (just in case someone used a custom conda env kernel locally)
+                  for f in docs/notebooks/*.ipynb ; do
+                      jupytext --to notebook --set-kernel python3 $f
+                  done
+
                   jcache notebook add docs/notebooks/*.ipynb
                   jcache project execute --timeout 1800
 
