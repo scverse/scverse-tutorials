@@ -10,6 +10,8 @@ from datetime import datetime
 from importlib.metadata import metadata
 from pathlib import Path
 
+
+
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE / "extensions"))
 
@@ -54,6 +56,8 @@ extensions = [
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
     "sphinx_gallery.gen_gallery",
+    "sphinx_markdown_builder",
+    "sphinx_design",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
 
@@ -139,6 +143,6 @@ def setup(app):
             "enable_math": True,
             "enable_inline_math": False,
             "enable_eval_rst": True,
-        },
-        True,
-    )
+        }, True)
+
+

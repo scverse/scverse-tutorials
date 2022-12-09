@@ -7,4 +7,5 @@
 
     references.md
     notebooks/example
+    notebooks/external_resources
     gallery/index
