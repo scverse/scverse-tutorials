@@ -1,3 +1,5 @@
+.jupyter_cache
+
 # Temp files
 .DS_Store
 *~
@@ -22,6 +24,3 @@ __pycache__/
 # IDEs
 /.idea/
 /.vscode/
-
-# gallery
-/gallery

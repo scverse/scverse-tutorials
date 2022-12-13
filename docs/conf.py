@@ -45,7 +45,6 @@ html_context = {
 # Add any Sphinx extension module names here, as strings.
 # They can be extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
-    "m2r",
     "myst_nb",
     "sphinx_copybutton",
     "sphinx.ext.autodoc",
@@ -55,9 +54,8 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
-    "sphinx_gallery.gen_gallery",
-    "sphinx_markdown_builder",
     "sphinx_design",
+    "IPython.sphinxext.ipython_console_highlighting",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
 
@@ -84,22 +82,13 @@ nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
-source_suffix = {
-    ".rst": "restructuredtext",
-    ".ipynb": "myst-nb",
-    ".myst": "myst-nb"
-}
+source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
 
 intersphinx_mapping = {
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
 }
 
-# -- Sphinx Gallery ----------------------------------------------------------
-sphinx_gallery_conf = {
-    "examples_dirs": "./notebooks",
-    "gallery_dirs": "./gallery"
-}
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -121,7 +110,10 @@ html_theme_options = {
     "repository_branch": "main",
     "path_to_docs": "docs",
     "use_repository_button": True,
-    "launch_buttons": {"binderhub_url": "https://mybinder.org", "colab_url": "https://colab.research.google.com"},
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        # "colab_url": "https://colab.research.google.com",
+    },
 }
 
 pygments_style = "default"
@@ -143,6 +135,6 @@ def setup(app):
             "enable_math": True,
             "enable_inline_math": False,
             "enable_eval_rst": True,
-        }, True)
-
-
+        },
+        True,
+    )
