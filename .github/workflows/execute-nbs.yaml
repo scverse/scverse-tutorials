@@ -53,7 +53,7 @@ jobs:
 
                   # First remove all notebooks from the project, then add all again.
                   # This does not remove them from the cache. This step is required since a notebook could be in the cache, but not in the PR.
-                  jcache notebook clear
+                  jcache notebook clear --force
                   jcache notebook add docs/notebooks/*.ipynb
                   jcache project execute --timeout 1800
 
