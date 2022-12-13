@@ -8,6 +8,7 @@
 
 notebooks/example
 notebooks/example2
+notebooks/scverse_data_backed
 
 references.md
 ```
