@@ -13,3 +13,4 @@ dependencies:
           - scanpy
           - mudata
           - mudatasets
+          - leidenalg
