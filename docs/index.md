@@ -18,6 +18,7 @@ our [YouTube channel](https://www.youtube.com/channel/UCpsvsIAW3R5OdftJKKuLNMA).
 
 notebooks/example
 notebooks/example2
+notebooks/scverse_data_interoperability
 
 references.md
 ```
