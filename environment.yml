@@ -11,3 +11,8 @@ dependencies:
     - pip
     - pip:
           - scanpy
+          - scrublet
+          - leidenalg
+          - decoupler
+          - celltypist
+          - seaborn

@@ -17,6 +17,7 @@ our [YouTube channel](https://www.youtube.com/channel/UCpsvsIAW3R5OdftJKKuLNMA).
 :maxdepth: 1
 
 notebooks/example
+notebooks/basic-scrna-tutorial
 notebooks/example2
 notebooks/scverse_data_interoperability
 
