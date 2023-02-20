@@ -12,3 +12,6 @@ dependencies:
     - pip:
           - scanpy
           - mudata
+          - muon
+          - mudatasets
+          - leidenalg

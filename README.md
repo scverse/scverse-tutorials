@@ -1,10 +1,12 @@
 # scverse tutorials
 
-[![Tests][badge-tests]][link-tests]
 [![Documentation][badge-docs]][link-docs]
 
-[badge-tests]: https://img.shields.io/github/workflow/status/scverse-tutorials/Test/main
-[link-tests]: https://github.com/your_github_username/scverse-doc/actions/workflows/test.yml
-[badge-docs]: https://img.shields.io/readthedocs/scverse-doc
+This repository hosts tutorials for performing data analyses with [scverse tools](https://scverse.org).
+The tutorials found here are _shared tutorials_ that complement more specific tutorials provided by invidiual
+[core](https://scverse.org/packages/) and [ecosystem](https://scverse.org/packages/#ecosystem) package tutorials.
 
-Collection of tutorials for scverse packages.
+Please check out the [learn](https://scverse.org/learn) page on scverse.org for an overview of all tutorials!
+
+[link-docs]: https://scverse-tutorials.readthedocs.io/en/latest/
+[badge-docs]: https://img.shields.io/readthedocs/scverse-tutorials

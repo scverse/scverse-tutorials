@@ -10,6 +10,7 @@ from datetime import datetime
 from importlib.metadata import metadata
 from pathlib import Path
 
+
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE / "extensions"))
 
@@ -53,6 +54,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
+    "sphinx_design",
     "IPython.sphinxext.ipython_console_highlighting",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
@@ -80,22 +82,17 @@ nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
-source_suffix = {
-    ".rst": "restructuredtext",
-    ".ipynb": "myst-nb",
-    ".myst": "myst-nb",
-}
+source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
 
 intersphinx_mapping = {
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
 }
 
-
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints", ".jupyter_cache"]
 
 
 # -- Options for HTML output -------------------------------------------------
