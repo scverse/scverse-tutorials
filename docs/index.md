@@ -20,6 +20,7 @@ notebooks/example
 notebooks/example2
 notebooks/scverse_data_backed
 notebooks/scverse_data_interoperability
+notebooks/getting_started
 
 references.md
 ```
