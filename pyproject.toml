@@ -35,6 +35,7 @@ doc = [
     "ipykernel",
     "ipython",
     "sphinx-copybutton",
+    "sphinx-design",
 ]
 
 [tool.isort]

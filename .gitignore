@@ -1,4 +1,5 @@
 .jupyter_cache
+.ipynb_checkpoints
 
 # Temp files
 .DS_Store
