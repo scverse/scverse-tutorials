@@ -4,12 +4,12 @@ diff a/.gitignore b/.gitignore	(rejected hunks)
  .DS_Store
  *~
 +buck-out/
- 
+
  # Compiled files
 +.venv/
  __pycache__/
 +.mypy_cache/
 +.ruff_cache/
- 
+
  # Distribution / packaging
  /build/
