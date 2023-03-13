@@ -2,7 +2,6 @@
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
-
 [project]
 name = "scverse-tutorials"
 version = "0.0.1"
@@ -27,7 +26,7 @@ dev = [
 ]
 doc = [
     "sphinx>=4",
-    "sphinx-book-theme>=0.3.3",
+    "sphinx-book-theme>=1.0.0",
     "myst-nb",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
