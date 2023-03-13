@@ -84,6 +84,7 @@ typehints_defaults = "braces"
 source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
 
 intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
 }
@@ -106,7 +107,7 @@ html_title = project_name
 html_theme_options = {
     "repository_url": repository_url,
     "repository_branch": "main",
-    "path_to_docs": "docs",
+    "path_to_docs": "docs/",
     "use_repository_button": True,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
