@@ -6,7 +6,11 @@
 *~
 
 # Compiled files
-__pycache__/
+.venv/
+__pycache__
+.mypy_cache/
+.ruff_cache/
+
 
 # Distribution / packaging
 /build/
