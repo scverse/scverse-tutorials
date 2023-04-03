@@ -1,7 +1,7 @@
 {
     "template": "https://github.com/scverse/cookiecutter-scverse",
-    "commit": "c96cadaa981a71113cc97ada8e5085188ed22ed7",
-    "checkout": "v0.1.1",
+    "commit": "57f6267716826dad73baba46dc3c00fe7262c459",
+    "checkout": "v0.2.0",
     "context": {
         "cookiecutter": {
             "project_name": "scverse-tutorials",

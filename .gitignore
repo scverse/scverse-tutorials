@@ -1,11 +1,16 @@
 .jupyter_cache
+.ipynb_checkpoints
 
 # Temp files
 .DS_Store
 *~
 
 # Compiled files
-__pycache__/
+.venv/
+__pycache__
+.mypy_cache/
+.ruff_cache/
+
 
 # Distribution / packaging
 /build/

@@ -54,7 +54,6 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
-    "sphinx_design",
     "IPython.sphinxext.ipython_console_highlighting",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
@@ -67,7 +66,7 @@ napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
 napoleon_use_rtype = True  # having a separate entry generally helps readability
 napoleon_use_param = True
-myst_heading_anchors = 3  # create anchors for h1-h3
+myst_heading_anchors = 6  # create anchors for h1-h6
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
@@ -85,10 +84,10 @@ typehints_defaults = "braces"
 source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
 
 intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
 }
-
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -108,7 +107,7 @@ html_title = project_name
 html_theme_options = {
     "repository_url": repository_url,
     "repository_branch": "main",
-    "path_to_docs": "docs",
+    "path_to_docs": "docs/",
     "use_repository_button": True,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
