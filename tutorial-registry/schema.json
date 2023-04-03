@@ -1,0 +1,66 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/scverse/scverse-tutorials/main/schema.json",
+    "title": "Scverse Tutorials",
+    "description": "A tutorial for an scverse core or ecosystem package that is listed on scverse.org/learn",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the tutorial. Must be unique.",
+            "type": "string"
+        },
+        "description": {
+            "description": "Summary of the tutorial (1-2 sentences).",
+            "type": "string"
+        },
+        "link": {
+            "description": "Link to the tutorial",
+            "type": "string",
+            "format": "uri"
+        },
+        "level": {
+            "description": "Difficulty of the tutorial",
+            "type": "string",
+            "enum": ["beginner", "intermediate", "advanced"]
+        },
+        "category": {
+            "description": "Category of the tutorial",
+            "type": "string",
+            "enum": [
+                "data structures",
+                "analysis",
+                "data integration",
+                "interoperability",
+                "visualization"
+            ]
+        },
+        "modality": {
+            "description": "Is the tutorial related to a specific modality?",
+            "type": "string",
+            "enum": [
+                "RNA",
+                "protein",
+                "epigenetics",
+                "DNA",
+                "AIRR",
+                "multimodal",
+                "not applicable",
+                "spatial"
+            ]
+        },
+        "packages": {
+            "description": "List the scverse core and ecosystem packages this tutorial is about. "
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "project_home",
+        "documentation_home",
+        "install",
+        "license",
+        "tags",
+        "version",
+        "authors"
+    ]
+}
