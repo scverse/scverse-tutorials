@@ -10,6 +10,7 @@ dependencies:
     - jupytext
     - pip
     - pip:
+          - "pandas<2"
           - scanpy
           - mudata
           - muon
