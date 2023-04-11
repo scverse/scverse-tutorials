@@ -10,5 +10,6 @@ notebooks/scverse_data_backed
 notebooks/scverse_data_interoperability
 notebooks/getting_started
 
+notebooks/tutorial_axes_anndata_mudata
 references.md
 ```
