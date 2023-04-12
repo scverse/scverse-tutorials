@@ -49,18 +49,25 @@
             ]
         },
         "packages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
             "description": "List the scverse core and ecosystem packages this tutorial is about. "
+        },
+        "license": {
+            "description": "The license of the tutorial",
+            "type": "string"
+        },
+        "authors": {
+            "description": "List of authors/maintainers of the tutorial. Entries must be Github user IDs.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
         }
     },
-    "required": [
-        "name",
-        "description",
-        "project_home",
-        "documentation_home",
-        "install",
-        "license",
-        "tags",
-        "version",
-        "authors"
-    ]
+    "required": ["name", "description", "link", "level", "category", "modality"]
 }
