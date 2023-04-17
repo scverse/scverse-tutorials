@@ -18,7 +18,7 @@ We have the following requirement for a package to be eligible to be considered 
 
 1. The package must be a scverse listed ecosystem package and therefore meet all corresponding requirements.
 2. Any used (advanced) methods must be published. Preprints are acceptable on a case by case basis.
-3. We require an active point of contact that is available on zulip. We reserve the right to remove packages if we cannot reach a responsible person anymore.
+3. We require an active point of contact that is available on the [scverse zulip](https://scverse.zulipchat.com/). We reserve the right to remove packages if we cannot reach a responsible person anymore.
 
 ## How we resolve conflicts when several packages try to submit tutorials that tackle the same scientific question
 
