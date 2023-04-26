@@ -16,7 +16,7 @@ To this end, this repository contains
 If you believe a tutorial should be added to `scverse.org/learn`, please open an issue. We will discuss the request
 in the next [open community meeting](https://hackmd.io/VfVLKb3ETGKN2j_7tn8ZJQ?view).
 
-For being added to our website, tutorials must fulfil at least the following requirements:
+To be added to our website, tutorials must fulfil at least the following requirements:
 
 -   all featured packages must be scverse [core](https://scverse.org/packages/#core-packages) or
     [approved ecosystem packages](https://scverse.org/packages/#ecosystem). This does not apply to packages that are not
