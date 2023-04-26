@@ -18,13 +18,8 @@
             "type": "string",
             "format": "uri"
         },
-        "level": {
-            "description": "Difficulty of the tutorial",
-            "type": "string",
-            "enum": ["basic", "advanced"]
-        },
-        "category": {
-            "description": "Category of the tutorial",
+        "primary_category": {
+            "description": "Category the tutorial will be listed under",
             "type": "string",
             "enum": [
                 "data structures",
@@ -53,7 +48,7 @@
             "items": {
                 "type": "string"
             },
-            "description": "List the scverse core and ecosystem packages this tutorial is about. "
+            "description": "List the scverse core and ecosystem packages this tutorial is about. This should be the pypi identifier where applicable. "
         },
         "license": {
             "description": "The license of the tutorial",
