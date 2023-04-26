@@ -22,37 +22,47 @@
             "description": "Category the tutorial will be listed under",
             "type": "string",
             "enum": [
-                "data structures",
-                "analysis",
-                "data integration",
-                "interoperability",
-                "visualization"
+                "Data structures",
+                "scRNA-seq",
+                "Spatial",
+                "Adaptive immune cell receptor",
+                "Surface proteins",
+                "ATAC-seq",
+                "Multimodal",
+                "Tips & Tricks"
             ]
         },
         "modality": {
-            "description": "Is the tutorial related to a specific modality?",
-            "type": "string",
-            "enum": [
-                "RNA",
-                "protein",
-                "epigenetics",
-                "DNA",
-                "AIRR",
-                "multimodal",
-                "not applicable",
-                "spatial"
-            ]
+            "description": "Which modalities are used in the tutorial?",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["DNA", "RNA", "protein", "ATAC", "AIRR", "spatial"]
+            },
+            "uniqueItems": true
+        },
+        "tags": {
+            "description": "Additional tags that describe the tutorial",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "data structures",
+                    "analysis",
+                    "data integration",
+                    "interoperability",
+                    "visualization"
+                ]
+            },
+            "uniqueItems": true
         },
         "packages": {
             "type": "array",
             "items": {
                 "type": "string"
             },
-            "description": "List the scverse core and ecosystem packages this tutorial is about. This should be the pypi identifier where applicable. "
-        },
-        "license": {
-            "description": "The license of the tutorial",
-            "type": "string"
+            "description": "List the scverse core and ecosystem packages this tutorial is about. This should be the pypi identifier where applicable. ",
+            "uniqueItems": true
         },
         "authors": {
             "description": "List of authors/maintainers of the tutorial. Entries must be Github user IDs.",
@@ -64,5 +74,5 @@
             "uniqueItems": true
         }
     },
-    "required": ["name", "description", "link", "level", "category", "modality"]
+    "required": ["name", "description", "link", "primary_category", "authors"]
 }

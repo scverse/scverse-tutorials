@@ -12,7 +12,7 @@
       description: |
           Analyze spatial data generated with different technologies
 
-- "Adaptive immune cell receptor (AIR) data":
+- Adaptive immune cell receptor:
       description: |
           Tutorials for analyzing single-cell B-cell and T-cell receptor sequencing data
 
@@ -20,7 +20,7 @@
       description: |
           CITE-seq analyses
 
-- ATAC-seq data:
+- ATAC-seq:
       description: |
           Analyse chromatin accessibility data
 
