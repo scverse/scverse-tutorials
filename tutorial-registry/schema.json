@@ -21,7 +21,7 @@
         "level": {
             "description": "Difficulty of the tutorial",
             "type": "string",
-            "enum": ["beginner", "intermediate", "advanced"]
+            "enum": ["basic", "advanced"]
         },
         "category": {
             "description": "Category of the tutorial",
