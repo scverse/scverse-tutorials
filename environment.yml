@@ -10,6 +10,7 @@ dependencies:
     - jupytext
     - pip
     - pip:
+          - pooch
           - scanpy
           - scrublet
           - leidenalg
