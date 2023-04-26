@@ -10,13 +10,15 @@ dependencies:
     - jupytext
     - pip
     - pip:
-          - pooch
+          - "pandas<2"
           - scanpy
           - scrublet
           - leidenalg
           - decoupler
           - celltypist
           - seaborn
+          - mudata
           - muon
           - mudatasets
           - omnipath
+          - pooch
