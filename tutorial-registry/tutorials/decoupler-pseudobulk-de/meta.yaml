@@ -4,6 +4,7 @@ description: |
     a human data-set. The data consists of ~5k Blood myeloid cells from healthy and COVID-19 infected patients
     available in the Single Cell Expression Atlas here.
 link: https://decoupler-py.readthedocs.io/en/latest/notebooks/pseudobulk.html
+image: icon.webp
 primary_category: scRNA-seq
 tags:
     - differential expression
