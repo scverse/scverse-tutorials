@@ -14,7 +14,8 @@ To this end, this repository contains
 ## Adding tutorials
 
 If you believe a tutorial should be added to `scverse.org/learn`, please open an issue. We will discuss the request
-in the next [open community meeting](https://hackmd.io/VfVLKb3ETGKN2j_7tn8ZJQ?view).
+in the next [open community meeting](https://hackmd.io/VfVLKb3ETGKN2j_7tn8ZJQ?view) and potentially suggest
+improvements.
 
 To be added to our website, tutorials must fulfill at least the following requirements:
 
@@ -23,6 +24,7 @@ To be added to our website, tutorials must fulfill at least the following requir
     specific to omics data analysis (e.g. pandas, seaborn).
 -   the notebook author agrees to maintain the tutorial in the future and is reachable via [zulip](https://scverse.zulipchat.com).
 -   the notebook contains a backlink to [scverse.org/learn](scverse.org/learn)
+-   the notebook is self-contained: All required example data is downloaded as part of the tutorial
 
 ## Structure of external tutorials
 
