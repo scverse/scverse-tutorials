@@ -2,13 +2,12 @@ name: Getting started with AnnData
 description: |
     Suppose a colleague of yours did some single cell data analysis in Python and Scanpy,
     saving the results in an AnnData object and sending it to you in a *.h5ad file. This tutorial will walk you
-     through that file and help you explore its structure and content — even if you are new to anndata, Scanpy or Python.
+    through that file and help you explore its structure and content — even if you are new to anndata, Scanpy or Python.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/anndata_getting_started.html
-level: beginner
-category: data structures
-modality: not applicable
+primary_category: Data structures
+tags:
+    - Data structures
 packages:
     - anndata
-license: CC-BY-4.0 # TODO
 authors:
     - jlause

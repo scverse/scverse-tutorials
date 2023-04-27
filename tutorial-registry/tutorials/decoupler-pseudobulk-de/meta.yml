@@ -1,0 +1,15 @@
+name: Pseudo-bulk differential expression and functional analysis
+description: |
+    In this notebook we showcase how to use decoupler for pathway and transcription factor (TF) enrichment from
+    a human data-set. The data consists of ~5k Blood myeloid cells from healthy and COVID-19 infected patients
+    available in the Single Cell Expression Atlas here.
+link: https://decoupler-py.readthedocs.io/en/latest/notebooks/pseudobulk.html
+primary_category: scRNA-seq
+tags:
+    - differential expression
+    - functional analysis
+packages:
+    - decoupler
+    - scanpy
+authors:
+    - PauBadiaM
