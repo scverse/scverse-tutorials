@@ -18,6 +18,11 @@
             "type": "string",
             "format": "uri"
         },
+        "image": {
+            "description": "Preview image file that is stored in the same folder as the meta.yaml file. (1) supported formats: svg, png, webp. (2) filename: icon.{svg,png,webp}. (3) should either be SVG or have exactly 512px in at least one dimension).",
+            "type": "string",
+            "pattern": "icon\\.(svg|png|webp)"
+        },
         "primary_category": {
             "description": "Category the tutorial will be listed under",
             "type": "string",
@@ -72,5 +77,12 @@
             "uniqueItems": true
         }
     },
-    "required": ["name", "description", "link", "primary_category", "authors"]
+    "required": [
+        "name",
+        "description",
+        "link",
+        "image",
+        "primary_category",
+        "authors"
+    ]
 }

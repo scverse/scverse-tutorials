@@ -5,6 +5,7 @@ description: |
     workflows can be stored in the same MuData object.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorial_axes_anndata_mudata.html
 primary_category: Data structures
+image: icon.svg
 tags:
     - data structures
 packages:
