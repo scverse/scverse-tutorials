@@ -6,7 +6,7 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/anndata_getting_started.html
 primary_category: Data structures
 tags:
-    - Data structures
+    - data structures
 packages:
     - anndata
 authors:

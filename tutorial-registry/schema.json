@@ -48,10 +48,8 @@
                 "type": "string",
                 "enum": [
                     "data structures",
-                    "analysis",
-                    "data integration",
-                    "interoperability",
-                    "visualization"
+                    "differential expression",
+                    "functional analysis"
                 ]
             },
             "uniqueItems": true
