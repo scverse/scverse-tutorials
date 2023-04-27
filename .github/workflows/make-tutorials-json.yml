@@ -21,7 +21,7 @@ jobs:
                   python-version: "3.10"
                   cache: "pip" # caching pip dependencies
             - name: Install dependencies for validation script
-              run: pip install jsonschema pillow
+              run: pip install jsonschema pillow requests pyyaml
             - name: Execute validation script and create output directory
               run: |
                   ./tutorial-registry/validate.py --outdir=build
