@@ -23,7 +23,7 @@ To be added to our website, tutorials must fulfill at least the following requir
     [approved ecosystem packages](https://scverse.org/packages/#ecosystem). This does not apply to packages that are not
     specific to omics data analysis (e.g. pandas, seaborn).
 -   the notebook author agrees to maintain the tutorial in the future and is reachable via [zulip](https://scverse.zulipchat.com).
--   the notebook contains a backlink to [scverse.org/learn](scverse.org/learn)
+-   the notebook contains a backlink to [scverse.org/learn](https://scverse.org/learn)
 -   the notebook is self-contained: All required example data is downloaded as part of the tutorial
 
 ## Structure of external tutorials
