@@ -1,0 +1,14 @@
+name: Axes in AnnData and MuData
+description: |
+    In this tutorial we will showcase operations on AnnData objects storing each one independent view
+    of the same scRNAseq matrix (and accompanying metadata) and show how different choices of processing
+    workflows can be stored in the same MuData object.
+link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorial_axes_anndata_mudata.html
+primary_category: Data structures
+image: icon.svg
+tags:
+    - data structures
+packages:
+    - anndata
+authors:
+    - bio-la
