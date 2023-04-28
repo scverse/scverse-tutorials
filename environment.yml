@@ -12,8 +12,13 @@ dependencies:
     - pip:
           - "pandas<2"
           - scanpy
+          - scrublet
+          - leidenalg
+          - decoupler
+          - celltypist
+          - seaborn
           - mudata
           - muon
           - mudatasets
-          - leidenalg
+          - omnipath
           - pooch
