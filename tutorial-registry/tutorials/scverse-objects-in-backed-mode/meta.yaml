@@ -5,7 +5,6 @@ description: |
     These formats save HDF5 stores (via h5py) that can be accessed without loading heavy data
     matrices in memory (i.e. in backed mode), as a “read-only” object.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_backed.html#working-with-scverse-objects-in-backed-mode
-image: icon.svg
 primary_category: Data structures
 tags:
     - data format
@@ -13,4 +12,4 @@ packages:
     - anndata
     - mudata
     - scanpy
-authors:
+authors: gtca
