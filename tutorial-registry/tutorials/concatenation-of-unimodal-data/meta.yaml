@@ -2,7 +2,7 @@ name: Concatenation
 description: |
     In this notebook we showcase how to perform concatenation,
     meaning to keep all sub elements of each object, and stack these elements in an ordered way.
-    Merging is combining a set of collections into one resulting collection which contains 
+    Merging is combining a set of collections into one resulting collection which contains
     elements from the objects.
 link: https://anndata.readthedocs.io/en/latest/concatenation.html
 # image: icon.png
