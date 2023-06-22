@@ -2,6 +2,9 @@ name: Execute notebooks
 on:
     pull_request_target:
         branches: [main]
+        paths: 
+          - 'docs/**'
+          - 'environment.yml'
 
 jobs:
     runnbs:
