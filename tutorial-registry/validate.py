@@ -38,12 +38,17 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path):
     with open(schema_file) as f:
         schema = json.load(f)
 
+    links = []
+
     for tmp_meta_file in tutorials_dir.glob("**/meta.yaml"):
         with open(tmp_meta_file) as f:
             tutorial_id = tmp_meta_file.parent.name
             tmp_tutorial = yaml.load(f, yaml.SafeLoader)
             jsonschema.validate(tmp_tutorial, schema)
-            _check_url_exists(tmp_tutorial["link"])
+            link = tmp_tutorial["link"]
+            if link in links:
+                raise ValueError(f"Duplicate link: {link}")
+            _check_url_exists(link)
             # replace image path by absolute local path to image
             img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
             _check_image(img_path)
