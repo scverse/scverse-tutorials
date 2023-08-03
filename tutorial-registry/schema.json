@@ -61,6 +61,8 @@
                     "quality control",
                     "visualization",
                     "perturbation",
+                    "compositional analysis",
+                    "RNA velocity",
                     "pseudotime"
                 ]
             },
