@@ -65,7 +65,8 @@
                     "perturbation",
                     "compositional analysis",
                     "RNA velocity",
-                    "pseudotime"
+                    "pseudotime",
+                    "interoperability"
                 ]
             },
             "uniqueItems": true

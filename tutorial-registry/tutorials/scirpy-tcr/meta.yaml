@@ -3,7 +3,7 @@ description: |
     In this tutorial, we show how to perfrom QC on scTCR-seq data,
     define clonotype, cluster receptors by their sequence similarity
     and compute repertoire overlaps between patients.
-link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/api_overview.html
+link: https://scirpy.scverse.org/en/latest/tutorials/tutorial_3k_tcr.html
 primary_category: Adaptive immune cell receptor
 image: icon.svg
 tags:
