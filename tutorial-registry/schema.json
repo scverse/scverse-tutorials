@@ -55,8 +55,11 @@
                     "data structures",
                     "differential expression",
                     "functional analysis",
-                    "concatenation"
-
+                    "concatenation",
+                    "preprocessing",
+                    "cell-type annotation",
+                    "quality control",
+                    "visualization"
                 ]
             },
             "uniqueItems": true
