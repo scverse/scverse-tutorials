@@ -59,7 +59,8 @@
                     "preprocessing",
                     "cell-type annotation",
                     "quality control",
-                    "visualization"
+                    "visualization",
+                    "compositional analysis"
                 ]
             },
             "uniqueItems": true

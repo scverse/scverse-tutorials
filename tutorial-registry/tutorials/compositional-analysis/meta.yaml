@@ -1,0 +1,18 @@
+name: Compositional analysis
+description: |
+    Compositional analysis can be done on the level of cell identity clusters 
+    in the form of known cell types or cell states corresponding to, for example, cells recently affected by perturbations.
+    This chapter will introduce both approaches and apply them to the Haber dataset.
+link: https://www.sc-best-practices.org/conditions/compositional.html
+image: icon.png
+primary_category: scRNA-seq
+tags:
+    - compositional analysis
+packages:
+    - scanpy
+    - tensorflow
+authors:
+    - johannesostner
+    - emdann
+    - Zethson
+    - alitinet
