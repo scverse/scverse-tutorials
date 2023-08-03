@@ -1,4 +1,4 @@
-name: Interoperability
+name: Advanced plotting
 description: |
     This tutorial explains how to customize matplotlib plots generated
     by scanpy or other scverse libraries.
