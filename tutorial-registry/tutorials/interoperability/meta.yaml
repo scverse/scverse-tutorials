@@ -11,7 +11,4 @@ packages:
     - anndata
     - mudata
 authors:
-    - ivirshup
-    - dbdimitrov
-    - AnnaChristina
-    - Hrovatin
+    - emdann
