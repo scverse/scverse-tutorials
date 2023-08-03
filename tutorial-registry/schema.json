@@ -54,7 +54,11 @@
                 "enum": [
                     "data structures",
                     "differential expression",
-                    "functional analysis"
+                    "functional analysis",
+                    "preprocessing",
+                    "cell-type annotation",
+                    "quality control",
+                    "visualization"
                 ]
             },
             "uniqueItems": true
