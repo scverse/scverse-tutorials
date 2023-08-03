@@ -4,6 +4,7 @@ import argparse
 import json
 import shutil
 from pathlib import Path
+from textwrap import dedent
 from typing import Dict, List
 
 import jsonschema
@@ -29,7 +30,12 @@ def _check_image(img_path):
             width, height = img.size
             if not ((width == 512 and height <= 512) or (width <= 512 and height == 512)):
                 raise ValueError(
-                    f"Image must fit in a 512x512px bounding box and one dimension must be exactly 512 px. Actual dimensions (width, height): ({width}, ({height}))."
+                    dedent(
+                        f"""\
+                        When validating {img_path}: Image must fit in a 512x512px bounding box and one dimension must be
+                        exactly 512 px. Actual dimensions (width, height): ({width}, ({height}))."
+                        """
+                    )
                 )
 
 
@@ -47,7 +53,7 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path):
             jsonschema.validate(tmp_tutorial, schema)
             link = tmp_tutorial["link"]
             if link in links:
-                raise ValueError(f"Duplicate link: {link}")
+                raise ValueError(f"When validating {tmp_meta_file}: Duplicate link: {link}")
             links.append(link)
             _check_url_exists(link)
             # replace image path by absolute local path to image
