@@ -1,7 +1,8 @@
 name: Preprocessing, clustering and cell-type annotation
 description: |
-    This fundamental single-cell tutorial guides you through the most common analysis steps, including quality control,
-    normalization, feature selection, dimensionality reduction, clustering and cell-type annotation.
+    This fundamental tutorial covers common analysis steps: quality control,
+    normalization, feature selection, dimensionality reduction, clustering,
+    and cell-type annotation.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/basic-scrna-tutorial.html
 image: icon.webp
 primary_category: scRNA-seq
