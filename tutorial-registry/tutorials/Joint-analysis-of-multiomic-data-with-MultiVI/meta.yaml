@@ -1,8 +1,8 @@
 name: Joint analysis of paired and unpaired multiomic data with MultiVI
 description: |
-    This tutorial walks through how to read multiomic data, create a joint
-    object with paired and unpaired data, set-up and train a MultiVI model,
-    visualize the resulting latent space, and run differential analyses.
+    This tutorial shows how to read multiomic data, create a joint object 
+    with paired/unpaired data, train MultiVI model, visualize latent space,
+    and run differential analyses.
 link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/MultiVI_tutorial.html
 image: icon.png
 primary_category: ATAC-seq
