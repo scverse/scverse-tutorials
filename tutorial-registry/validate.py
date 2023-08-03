@@ -48,6 +48,7 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path):
             link = tmp_tutorial["link"]
             if link in links:
                 raise ValueError(f"Duplicate link: {link}")
+            links.append(link)
             _check_url_exists(link)
             # replace image path by absolute local path to image
             img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
