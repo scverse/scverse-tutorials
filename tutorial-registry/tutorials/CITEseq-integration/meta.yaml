@@ -1,0 +1,23 @@
+name: CITE-seq integration
+description: |
+    CITE-seq is a method for cellular indexing of transcriptomes and
+    epitopes by sequencing. CITE-seq datasets comprise transcriptome-wide
+    measurements for single cells (gene expression) as well as surface
+    protein level information, typically for a few dozens of proteins.
+    These notebooks cover different CITE-seq datasets:
+    - analysis of 5k peripheral blood mononuclear cells (PBMCs) showcasing
+    dsb normalisation and data integration with MOFA+
+    - calculating weighted nearest neighbours for the 5k PBMCs dataset
+    that also demonstrates how to handle multiple multimodal embeddings.
+link: https://muon-tutorials.readthedocs.io/en/latest/cite-seq/index.html
+image: icon.png
+primary_category: scRNA-seq
+tags:
+    - multimodal
+    - data integration
+packages:
+    - scanpy
+    - muon
+    - mofax
+authors:
+    - gtca
