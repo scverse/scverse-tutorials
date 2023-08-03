@@ -1,6 +1,6 @@
 name: Getting started with AnnData
 description: |
-    Tutorial helps you to explore the structure and content of single-cell 
+    Tutorial helps you to explore the structure and content of single-cell
     data analysis results in a *.h5ad file using AnnData, Scanpy, and Python.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/anndata_getting_started.html
 image: icon.svg

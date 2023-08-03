@@ -1,7 +1,7 @@
 name: Compositional analysis
 description: |
-    This tutorial introduces compositional analysis at cell identity 
-    cluster level, based on known cell types or states affected by 
+    This tutorial introduces compositional analysis at cell identity
+    cluster level, based on known cell types or states affected by
     perturbations using Haber dataset.
 link: https://www.sc-best-practices.org/conditions/compositional.html
 image: icon.png
