@@ -5,7 +5,7 @@ description: |
     Merging is combining a set of collections into one resulting collection which contains
     elements from the objects.
 link: https://anndata.readthedocs.io/en/latest/concatenation.html
-image: scverse_logo_fixed_512px.png
+image: icon.png
 primary_category: scRNA-seq
 tags:
     - concatenation
