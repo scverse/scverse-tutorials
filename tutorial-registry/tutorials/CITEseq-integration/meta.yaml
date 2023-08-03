@@ -4,7 +4,7 @@ description: |
     showcasing dsb normalisation and data integration with MOFA+ and
     calculating weighted nearest neighbours to demonstrate how to
     handle multiple multimodal embeddings.
-link: https://muon-tutorials.readthedocs.io/en/latest/cite-seq/index.html
+link: https://muon-tutorials.readthedocs.io/en/latest/cite-seq/1-CITE-seq-PBMC-5k.html
 image: icon.png
 primary_category: Surface proteins
 tags:
