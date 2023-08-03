@@ -6,7 +6,7 @@ description: |
     elements from the objects.
 link: https://anndata.readthedocs.io/en/latest/concatenation.html
 image: icon.png
-primary_category: scRNA-seq
+primary_category: Data structures
 tags:
     - concatenation
 packages:
@@ -14,4 +14,4 @@ packages:
     - scanpy
     - scipy
 authors:
-    - gtca
+    - ivirshup
