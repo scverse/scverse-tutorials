@@ -6,7 +6,7 @@ link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorial_conc
 image: icon.png
 primary_category: scRNA-seq
 tags:
-    - concatanation
+    - concatenation
     - data structures
 packages:
     - anndata
