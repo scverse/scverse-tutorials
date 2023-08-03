@@ -61,7 +61,11 @@
                     "quality control",
                     "visualization",
                     "multimodal",
-                    "data integration"
+                    "data integration",
+                    "perturbation",
+                    "compositional analysis",
+                    "RNA velocity",
+                    "pseudotime"
                 ]
             },
             "uniqueItems": true
