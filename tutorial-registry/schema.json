@@ -54,7 +54,9 @@
                 "enum": [
                     "data structures",
                     "differential expression",
-                    "functional analysis"
+                    "functional analysis",
+                    "concatenation"
+
                 ]
             },
             "uniqueItems": true
