@@ -7,9 +7,10 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_backed.html#working-with-scverse-objects-in-backed-mode
 primary_category: Data structures
 tags:
-    - data format
+    - Data structures
 packages:
     - anndata
     - mudata
     - scanpy
-authors: gtca
+authors:
+ - emdann
