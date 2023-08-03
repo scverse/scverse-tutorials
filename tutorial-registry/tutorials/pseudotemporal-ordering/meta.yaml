@@ -1,0 +1,14 @@
+name: Pseudotemporal ordering
+description: |
+    This tutorial show how a pseudotime can be constructed and compares different pseudotimes.
+link: https://www.sc-best-practices.org/trajectories/pseudotemporal.html#
+image: icon.png
+primary_category: scRNA-seq
+tags:
+    - pseudotime
+    - visualization
+packages:
+    - scanpy
+authors:
+    - WeilerP
+    - Zethson

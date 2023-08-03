@@ -60,7 +60,8 @@
                     "cell-type annotation",
                     "quality control",
                     "visualization",
-                    "compositional analysis"
+                    "compositional analysis",
+                    "pseudotime"
                 ]
             },
             "uniqueItems": true
