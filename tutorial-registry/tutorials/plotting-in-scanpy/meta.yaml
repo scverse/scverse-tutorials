@@ -1,0 +1,13 @@
+name: Interoperability
+description: |
+    This tutorial explores the visualization possibilities of scanpy, including
+    embeddings and the visualization of marker genes and differentially expressed genes.
+link: https://scanpy-tutorials.readthedocs.io/en/latest/plotting/core.html
+image: icon.png
+primary_category: Tips & Tricks
+tags:
+    - visualization
+packages:
+    - scanpy
+authors:
+    - fidelram
