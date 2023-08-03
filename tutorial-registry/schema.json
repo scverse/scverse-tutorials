@@ -60,6 +60,7 @@
                     "cell-type annotation",
                     "quality control",
                     "visualization",
+                    "RNA velocity",
                     "pseudotime"
                 ]
             },
