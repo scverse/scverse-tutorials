@@ -6,6 +6,7 @@ description: |
     matrices in memory (i.e. in backed mode), as a “read-only” object.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_backed.html#working-with-scverse-objects-in-backed-mode
 primary_category: Data structures
+image: icon.png
 tags:
     - Data structures
 packages:
@@ -13,4 +14,4 @@ packages:
     - mudata
     - scanpy
 authors:
- - emdann
+    - emdann
