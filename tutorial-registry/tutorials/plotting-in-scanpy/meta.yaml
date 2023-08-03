@@ -1,4 +1,4 @@
-name: Interoperability
+name: Plotting in scanpy
 description: |
     This tutorial explores the visualization possibilities of scanpy, including
     embeddings and the visualization of marker genes and differentially expressed genes.
