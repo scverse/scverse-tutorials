@@ -59,7 +59,9 @@
                     "preprocessing",
                     "cell-type annotation",
                     "quality control",
-                    "visualization"
+                    "visualization",
+                    "multimodal",
+                    "data integration"
                 ]
             },
             "uniqueItems": true
