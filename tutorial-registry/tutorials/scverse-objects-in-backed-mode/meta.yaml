@@ -8,7 +8,7 @@ link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_
 primary_category: Data structures
 image: icon.png
 tags:
-    - Data structures
+    - data structures
 packages:
     - anndata
     - mudata
