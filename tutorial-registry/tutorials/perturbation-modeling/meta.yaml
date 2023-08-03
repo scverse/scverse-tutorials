@@ -1,0 +1,18 @@
+name: Perturbation modeling
+description: |
+    This tutorial introduces three approaches that can be tackled with 
+    single-cell perturbation data in the following sections:
+    - Finding the cell types that were most affected by pertubations using Augur
+    - Predicting the transcriptional response of single cells to perturbations using scGen
+    - Quantifying the sensitivity of genetic CRISPR perturbations using Mixscape
+link: https://www.sc-best-practices.org/conditions/perturbation_modeling.html
+image: icon.png
+primary_category: scRNA-seq
+tags:
+    - perturbation
+packages:
+    - pertpy
+    - scanpy
+authors:
+    - Zethson
+    - M0hammadL
