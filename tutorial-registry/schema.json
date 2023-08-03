@@ -59,7 +59,14 @@
                     "preprocessing",
                     "cell-type annotation",
                     "quality control",
-                    "visualization"
+                    "visualization",
+                    "multimodal",
+                    "data integration",
+                    "perturbation",
+                    "compositional analysis",
+                    "RNA velocity",
+                    "pseudotime",
+                    "interoperability"
                 ]
             },
             "uniqueItems": true
