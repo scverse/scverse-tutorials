@@ -5,7 +5,7 @@ description: |
     data processing is described.
 link: https://muon-tutorials.readthedocs.io/en/latest/single-cell-rna-atac/pbmc10k/2-Chromatin-Accessibility-Processing.html
 image: icon.png
-primary_category: ATAC
+primary_category: ATAC-seq
 tags:
     - preprocessing
     - multimodal
