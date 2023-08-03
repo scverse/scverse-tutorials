@@ -6,7 +6,7 @@ description: |
     handle multiple multimodal embeddings.
 link: https://muon-tutorials.readthedocs.io/en/latest/cite-seq/index.html
 image: icon.png
-primary_category: scRNA-seq
+primary_category: Surface proteins
 tags:
     - multimodal
     - data integration
