@@ -5,7 +5,6 @@ import json
 import shutil
 from pathlib import Path
 from textwrap import dedent
-from typing import Dict, List
 
 import jsonschema
 import requests
@@ -69,7 +68,7 @@ def load_categories(categories_file: Path):
         return yaml.load(f, yaml.SafeLoader)
 
 
-def make_output_dir(categories: List[Dict], tutorials: List[Dict], outdir: Path):
+def make_output_dir(categories: list[dict], tutorials: list[dict], outdir: Path):
     """Create the output directory.
 
     Structure:
