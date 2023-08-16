@@ -3,7 +3,7 @@ description: |
     This tutorial shows how to read multiomic data, create a joint object with
     paired/unpaired data, train MultiVI model, visualize latent space,
     and run differential analyses.
-link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/MultiVI_tutorial.html
+link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/multimodal/MultiVI_tutorial.html
 image: icon.png
 primary_category: ATAC-seq
 tags:
