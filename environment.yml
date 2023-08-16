@@ -1,24 +1,24 @@
 # declare dependencies for binder and for executing notebooks on CI
 name: tutorials
 channels:
-    - conda-forge
+  - conda-forge
 dependencies:
-    - python=3.10
-    - jupyter-cache
-    - ipykernel
-    - ipython
-    - jupytext
-    - pip
-    - pip:
-          - "pandas<2"
-          - scanpy
-          - scrublet
-          - leidenalg
-          - decoupler
-          - celltypist
-          - seaborn
-          - mudata
-          - muon
-          - mudatasets
-          - omnipath
-          - pooch
+  - python=3.10
+  - jupyter-cache
+  - ipykernel
+  - ipython
+  - jupytext
+  - pip
+  - pip:
+      - "pandas<2"
+      - scanpy
+      - scrublet
+      - leidenalg
+      - decoupler
+      - celltypist
+      - seaborn
+      - mudata
+      - muon
+      - mudatasets
+      - omnipath
+      - pooch

@@ -1,20 +1,20 @@
 name: Single-cell T-cell receptor analysis with scirpy
 description: |
-    In this tutorial, we show how to perfrom QC on scTCR-seq data,
-    define clonotype, cluster receptors by their sequence similarity
-    and compute repertoire overlaps between patients.
+  In this tutorial, we show how to perfrom QC on scTCR-seq data,
+  define clonotype, cluster receptors by their sequence similarity
+  and compute repertoire overlaps between patients.
 link: https://scirpy.scverse.org/en/latest/tutorials/tutorial_3k_tcr.html
 primary_category: Adaptive immune cell receptor
 image: icon.svg
 tags:
-    - quality control
-    - preprocessing
-    - visualization
-    - multimodal
+  - quality control
+  - preprocessing
+  - visualization
+  - multimodal
 packages:
-    - scirpy
-    - muon
-    - mudata
-    - anndata
+  - scirpy
+  - muon
+  - mudata
+  - anndata
 authors:
-    - grst
+  - grst

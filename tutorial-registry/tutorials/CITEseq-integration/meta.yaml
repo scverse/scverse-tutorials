@@ -1,17 +1,17 @@
 name: CITE-seq integration
 description: |
-    These notebooks showcase CITE-seq analysis of PBMCs with dsb
-    normalization, MOFA+ data integration, and weighted nearest neighbors
-    handling multimodal embeddings.
+  These notebooks showcase CITE-seq analysis of PBMCs with dsb
+  normalization, MOFA+ data integration, and weighted nearest neighbors
+  handling multimodal embeddings.
 link: https://muon-tutorials.readthedocs.io/en/latest/cite-seq/1-CITE-seq-PBMC-5k.html
 image: icon.png
 primary_category: Surface proteins
 tags:
-    - multimodal
-    - data integration
+  - multimodal
+  - data integration
 packages:
-    - scanpy
-    - muon
-    - mofax
+  - scanpy
+  - muon
+  - mofax
 authors:
-    - gtca
+  - gtca

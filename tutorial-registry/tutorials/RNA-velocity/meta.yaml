@@ -1,19 +1,19 @@
 name: RNA velocity
 description: |
-    This tutorial guides you through how RNA velocity can be inferred from single cell RNA-seq data
-    using scVelo.
+  This tutorial guides you through how RNA velocity can be inferred from single cell RNA-seq data
+  using scVelo.
 link: https://scvelo.readthedocs.io/en/stable/getting_started/
 image: icon.png
 primary_category: scRNA-seq
 tags:
-    - preprocessing
-    - RNA velocity
-    - visualization
+  - preprocessing
+  - RNA velocity
+  - visualization
 packages:
-    - anndata
-    - scanpy
+  - anndata
+  - scanpy
 authors:
-    - VolkerBergen
-    - WeilerP
-    - stefanpeidli
-    - Marius1311
+  - VolkerBergen
+  - WeilerP
+  - stefanpeidli
+  - Marius1311
