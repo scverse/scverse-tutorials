@@ -10,18 +10,22 @@ from datetime import datetime
 from importlib.metadata import metadata
 from pathlib import Path
 
+
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE / "extensions"))
 
 
 # -- Project information -----------------------------------------------------
 
+# NOTE: If you installed your project in editable mode, this might be stale.
+#       If this is the case, reinstall it to refresh the metadata
 info = metadata("scverse-tutorials")
 project_name = info["Name"]
 author = info["Author"]
 copyright = f"{datetime.now():%Y}, {author}."
 version = info["Version"]
-repository_url = f"https://github.com/scverse/{project_name}"
+urls = dict(pu.split(", ") for pu in info.get_all("Project-URL"))
+repository_url = urls["Source"]
 
 # The full version, including alpha/beta/rc tags
 release = info["Version"]
@@ -56,6 +60,8 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx.ext.mathjax",
+    "IPython.sphinxext.ipython_console_highlighting",
+    "sphinxext.opengraph",
     *[p.stem for p in (HERE / "extensions").glob("*.py")],
 ]
 
@@ -67,7 +73,7 @@ napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
 napoleon_use_rtype = True  # having a separate entry generally helps readability
 napoleon_use_param = True
-myst_heading_anchors = 3  # create anchors for h1-h3
+myst_heading_anchors = 6  # create anchors for h1-h6
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
@@ -82,22 +88,19 @@ nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
-source_suffix = {
-    ".rst": "restructuredtext",
-    ".ipynb": "myst-nb",
-    ".myst": "myst-nb",
-}
+source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
 
 intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
+    "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
 }
-
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints", ".jupyter_cache"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -112,9 +115,12 @@ html_title = project_name
 html_theme_options = {
     "repository_url": repository_url,
     "repository_branch": "main",
-    "path_to_docs": "docs",
+    "path_to_docs": "docs/",
     "use_repository_button": True,
-    "launch_buttons": {"binderhub_url": "https://mybinder.org", "colab_url": "https://colab.research.google.com"},
+    "launch_buttons": {
+        "binderhub_url": "https://mybinder.org",
+        # "colab_url": "https://colab.research.google.com",
+    },
 }
 
 pygments_style = "default"

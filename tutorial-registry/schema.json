@@ -1,0 +1,100 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/scverse/scverse-tutorials/main/schema.json",
+    "title": "Scverse Tutorials",
+    "description": "A tutorial for an scverse core or ecosystem package that is listed on scverse.org/learn",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the tutorial. Must be unique.",
+            "type": "string"
+        },
+        "description": {
+            "description": "Summary of the tutorial (1-2 sentences).",
+            "type": "string"
+        },
+        "link": {
+            "description": "Link to the tutorial",
+            "type": "string",
+            "format": "uri"
+        },
+        "image": {
+            "description": "Preview image file that is stored in the same folder as the meta.yaml file. (1) supported formats: svg, png, webp. (2) filename: icon.{svg,png,webp}. (3) should either be SVG or have exactly 512px in at least one dimension).",
+            "type": "string",
+            "pattern": "icon\\.(svg|png|webp)"
+        },
+        "primary_category": {
+            "description": "Category the tutorial will be listed under",
+            "type": "string",
+            "enum": [
+                "Data structures",
+                "scRNA-seq",
+                "Spatial",
+                "Adaptive immune cell receptor",
+                "Surface proteins",
+                "ATAC-seq",
+                "Multimodal",
+                "Tips & Tricks"
+            ]
+        },
+        "modality": {
+            "description": "Which modalities are used in the tutorial?",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ["DNA", "RNA", "protein", "ATAC", "AIRR", "spatial"]
+            },
+            "uniqueItems": true
+        },
+        "tags": {
+            "description": "Additional tags that describe the tutorial",
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": [
+                    "data structures",
+                    "differential expression",
+                    "functional analysis",
+                    "concatenation",
+                    "preprocessing",
+                    "cell-type annotation",
+                    "quality control",
+                    "visualization",
+                    "multimodal",
+                    "data integration",
+                    "perturbation",
+                    "compositional analysis",
+                    "RNA velocity",
+                    "pseudotime",
+                    "interoperability"
+                ]
+            },
+            "uniqueItems": true
+        },
+        "packages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List the scverse core and ecosystem packages this tutorial is about. This should be the pypi identifier where applicable. ",
+            "uniqueItems": true
+        },
+        "authors": {
+            "description": "List of authors/maintainers of the tutorial. Entries must be Github user IDs.",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "link",
+        "image",
+        "primary_category",
+        "authors"
+    ]
+}
