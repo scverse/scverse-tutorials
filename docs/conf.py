@@ -118,6 +118,7 @@ html_theme_options = {
         "binderhub_url": "https://mybinder.org",
         # "colab_url": "https://colab.research.google.com",
     },
+    "navigation_with_keys": False,
 }
 
 pygments_style = "default"
