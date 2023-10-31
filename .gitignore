@@ -1,25 +1,20 @@
-.jupyter_cache
-.ipynb_checkpoints
-
 # Temp files
 .DS_Store
 *~
 
 # Compiled files
-.venv/
-__pycache__
-.mypy_cache/
-.ruff_cache/
+__pycache__/
+.ipynb_checkpoints/
+/.jupyter_cache
+/.venv/
+/.*cache/
 
 
 # Distribution / packaging
-/build/
 /dist/
-/*.egg-info/
+/hatch.toml
 
 # Tests and coverage
-/.pytest_cache/
-/.cache/
 /data/
 
 # docs
@@ -29,3 +24,5 @@ __pycache__
 # IDEs
 /.idea/
 /.vscode/
+/docs/locale/de/LC_MESSAGES/build/
+*.mo

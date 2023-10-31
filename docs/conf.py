@@ -30,6 +30,9 @@ repository_url = urls["Source"]
 # The full version, including alpha/beta/rc tags
 release = info["Version"]
 
+locale_dirs = ["locale/"]  # path is example but recommended.
+gettext_compact = False
+
 bibtex_bibfiles = ["references.bib"]
 templates_path = ["_templates"]
 nitpicky = True  # Warn about broken links
