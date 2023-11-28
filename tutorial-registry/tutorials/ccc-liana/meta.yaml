@@ -1,0 +1,15 @@
+name: Cell-cell communication analysis with LIANA+
+description: |
+  This notebook showcases how to fetch publicly available datasets from the cellxgene portal and how to run cell-cell communication with LIANA+ in steady state conditions.
+link: CCC_Liana_1.ipynb
+image: icon.png
+primary_category: scRNA-seq
+tags:
+  - fetch data from cellxgene census
+  - cell-cell communication analysis
+packages:
+  - cellxgene_census
+  - liana
+  - scanpy
+authors:
+  - dbdimitrov
