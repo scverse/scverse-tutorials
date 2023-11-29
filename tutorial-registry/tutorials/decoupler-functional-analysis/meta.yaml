@@ -1,0 +1,16 @@
+name: Functional analysis with decoupler
+description: |
+  This notebook showcases decoupler for pathway and TF enrichment on ~5k
+  Blood myeloid cells from healthy and COVID-19 infected patients.
+link: https://github.com/scverse/scverse-tutorials/tree/main/docs/notebooks/Functional_analysis_with_decoupler.ipynb
+image: icon.png
+primary_category: scRNA-seq
+tags:
+  - functional analysis
+  - transcription factor activity inference
+  - pathway activity inference
+packages:
+  - decoupler
+  - scanpy
+authors:
+  - PauBadiaM
