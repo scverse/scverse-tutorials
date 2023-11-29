@@ -7,8 +7,6 @@ image: icon.png
 primary_category: scRNA-seq
 tags:
   - functional analysis
-  - transcription factor activity inference
-  - pathway activity inference
 packages:
   - decoupler
   - scanpy
