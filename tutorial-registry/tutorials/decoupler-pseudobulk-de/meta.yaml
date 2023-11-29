@@ -1,7 +1,7 @@
 name: Pseudobulk and differential expression analysis
 description: |
   This notebook showcases decoupler and PyDESeq2 for creating pseudobulk samples
-  and performing differential expression analysis on ~5k Blood myeloid cells from 
+  and performing differential expression analysis on ~5k Blood myeloid cells from
   healthy and COVID-19 infected patients.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorials_pseudobulk_DEA.ipynb
 image: icon.png
