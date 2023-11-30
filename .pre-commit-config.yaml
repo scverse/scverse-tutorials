@@ -52,13 +52,13 @@ repos:
         language: fail
         files: '.*\.rej$'
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.27.1
+    rev: 0.27.2
     hooks:
       - id: check-jsonschema
         files: "tutorial-registry/schema.json"
         args: ["--check-metaschema"]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.27.1
+    rev: 0.27.2
     hooks:
       - id: check-jsonschema
         files: "tutorial-registry/tutorials/.*/meta.yaml"
