@@ -18,6 +18,9 @@ maintainers = [
 urls.Documentation = "https://scverse.org/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 urls.Home-page = "https://github.com/scverse/scverse-tutorials"
+classifiers = [
+    "Private :: Do Not Upload",  # Prevent uploading to PyPI
+]
 dependencies = []
 
 [project.optional-dependencies]
@@ -84,12 +87,17 @@ ignore = [
     # We want docstrings to start immediately after the opening triple quote
     "D213",
 ]
+extend-include = ["*.ipynb"]
 
 [tool.ruff.pydocstyle]
 convention = "numpy"
 
 [tool.ruff.per-file-ignores]
-"docs/*" = ["I"]
+"docs/*" = [
+    "B018", # Trailing expressions in notebooks are not “useless”
+    "D103", # No need for docstrings in functions, we use literate programming
+    "E402", # Imports in non-top cells are fine
+]
 "tests/*" = ["D"]
 "*/__init__.py" = ["F401"]
 
