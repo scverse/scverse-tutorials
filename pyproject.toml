@@ -21,16 +21,9 @@ urls.Home-page = "https://github.com/scverse/scverse-tutorials"
 classifiers = [
     "Private :: Do Not Upload",  # Prevent uploading to PyPI
 ]
-dependencies = []
-
-[project.optional-dependencies]
-dev = [
-    "pre-commit"
-]
-doc = [
-    "docutils>=0.8,!=0.18.*,!=0.19.*",
-    "sphinx>=4",
-    "sphinx-book-theme>=1.0.0",
+dependencies = [
+    "sphinx>=7",
+    "sphinx-book-theme>=1.1.0rc1",
     "myst-nb",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
@@ -40,6 +33,14 @@ doc = [
     "ipython",
     "sphinx-copybutton",
 ]
+
+[project.optional-dependencies]
+dev = ["pre-commit"]
+
+[tool.hatch.build.targets.wheel]
+include = ["docs/notebooks"]
+[tool.hatch.build.targets.wheel.sources]
+"docs/notebooks" = "scverse_tutorials"
 
 [tool.black]
 line-length = 120
