@@ -1,5 +1,5 @@
 # Caches
-/.*cache
+/.*cache/
 /node_modules/
 /data/
 .ipynb_checkpoints/
