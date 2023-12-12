@@ -22,9 +22,8 @@ classifiers = [
     "Private :: Do Not Upload",  # Prevent uploading to PyPI
 ]
 dependencies = [
-    "docutils>=0.8,!=0.18.*,!=0.19.*",
-    "sphinx>=4",
-    "sphinx-book-theme>=1.0.0",
+    "sphinx>=7",
+    "sphinx-book-theme>=1.1.0rc1",
     "myst-nb",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
