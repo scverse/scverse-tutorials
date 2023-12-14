@@ -114,9 +114,7 @@ if __name__ == "__main__":
         prog="validate.py",
         description="Validate tutorials' meta.yaml and generate an output directory with json/images to be uploaded on github pages.",
     )
-    parser.add_argument(
-        "--outdir", type=Path, help="outdir that will contain the data to be uploaded on github pages"
-    )
+    parser.add_argument("--outdir", type=Path, help="outdir that will contain the data to be uploaded on github pages")
     args = parser.parse_args()
 
     SCHEMA = HERE / "schema.json"
