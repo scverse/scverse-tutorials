@@ -21,7 +21,16 @@ urls.Home-page = "https://github.com/scverse/scverse-tutorials"
 classifiers = [
     "Private :: Do Not Upload",  # Prevent uploading to PyPI
 ]
-dependencies = [
+
+[project.optional-dependencies]
+dev = ["pre-commit"]
+registry = [
+    "jsonschema",
+    "pillow",
+    "httpx",
+    "pyyaml",
+]
+docs = [
     "sphinx>=7",
     "sphinx-book-theme>=1.1.0rc1",
     "myst-nb",
@@ -34,13 +43,18 @@ dependencies = [
     "sphinx-copybutton",
 ]
 
-[project.optional-dependencies]
-dev = ["pre-commit"]
+[tool.hatch.envs.registry]
+features = ["registry"]
+[tool.hatch.envs.registry.scripts]
+validate = "python tutorial-registry/validate.py {args}"
+
+[tool.hatch.envs.docs]
+features = ["docs"]
+[tool.hatch.envs.docs.scripts]
+build = "sphinx-build -M html docs docs/_build {args}"
 
 [tool.hatch.build.targets.wheel]
-include = ["docs/notebooks"]
-[tool.hatch.build.targets.wheel.sources]
-"docs/notebooks" = "scverse_tutorials"
+bypass-selection = true  # This is not a package
 
 [tool.black]
 line-length = 120
