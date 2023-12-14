@@ -8,7 +8,7 @@ import shutil
 import sys
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Literal
 
 import httpx
 import jsonschema
@@ -16,7 +16,7 @@ import yaml
 from PIL import Image
 
 if TYPE_CHECKING:
-    from collections.abc import Generator
+    from collections.abc import Generator, Iterable, Mapping
 
 HERE = Path(__file__).absolute().parent
 
@@ -75,7 +75,12 @@ def load_categories(categories_file: Path):
         return yaml.load(f, yaml.SafeLoader)
 
 
-def make_output(categories: list[dict], tutorials: list[dict], *, outdir: Path | None = None):
+def make_output(
+    categories: Iterable[Mapping[str, Mapping[Literal["description"], str]]],
+    tutorials: Iterable[Mapping[str, str | Iterable[str]]],
+    *,
+    outdir: Path | None = None,
+) -> None:
     """Create the output directory.
 
     Structure:
@@ -84,22 +89,28 @@ def make_output(categories: list[dict], tutorials: list[dict], *, outdir: Path |
        - tutorialxxx/icon.svg  # original icon filenames under a folder for each tutorial. The path of the icon is listed in the json.
        - tutorialyyy/icon.png
     """
-    result = {"categories": categories, "tutorials": tutorials}
-    if not outdir:
-        json.dump(result, sys.stdout, indent=2)
-        return
+    if outdir:
+        outdir.mkdir(parents=True)
 
-    outdir.mkdir(parents=True)
-
+    tutorials_rel = []
     for tutorial in tutorials:
-        img_localpath = Path(tutorial["image"].parent.name) / tutorial["image"].name
-        img_outpath = outdir / img_localpath
-        img_outpath.parent.mkdir()
-        shutil.copy(tutorial["image"], img_outpath)
-        tutorial["image"] = str(img_localpath)
+        img_srcpath = Path(tutorial["image"])
+        img_localpath = Path(img_srcpath.parent.name) / img_srcpath.name
+        tut_rel = dict(tutorial)
+        tut_rel["image"] = str(img_localpath)
+        tutorials_rel.append(tut_rel)
+        if outdir:
+            img_outpath = outdir / img_localpath
+            img_outpath.parent.mkdir()
+            shutil.copy(img_srcpath, img_outpath)
 
-    with (outdir / "tutorials.json").open("w") as f:
-        json.dump(result, f)
+    result = {"categories": categories, "tutorials": tutorials_rel}
+
+    if outdir:
+        with (outdir / "tutorials.json").open("w") as f:
+            json.dump(result, f)
+    else:
+        json.dump(result, sys.stdout, indent=2)
 
 
 def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Path | None = None):
