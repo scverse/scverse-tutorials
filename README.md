@@ -26,6 +26,13 @@ To be added to our website, tutorials must fulfill at least the following requir
 -   the notebook contains a backlink to [scverse.org/learn](https://scverse.org/learn)
 -   the notebook is self-contained: All required example data is downloaded as part of the tutorial
 
+You can easily check your changes to tutorials or the registry locally:
+
+```shell
+hatch run docs:build  # for tutorial notebooks
+hatch run registry:validate  # for the tutorials registry
+```
+
 ## Structure of external tutorials
 
 While we do not mandate a specific structure for tutorials,
