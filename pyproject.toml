@@ -60,8 +60,11 @@ bypass-selection = true  # This is not a package
 line-length = 120
 
 [tool.ruff]
-src = ["src"]
 line-length = 120
+src = ["src"]
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
 select = [
     "F",  # Errors detected by Pyflakes
     "E",  # Error detected by Pycodestyle
@@ -76,7 +79,7 @@ select = [
     "RUF100",  # Report unused noqa directives
 ]
 ignore = [
-    # line too long -> we accept long comment lines; black gets rid of long code lines
+    # line too long -> we accept long comment lines; formatter gets rid of long code lines
     "E501",
     # Do not assign a lambda expression, use a def -> lambda expression assignments are convenient
     "E731",
@@ -102,12 +105,11 @@ ignore = [
     # We want docstrings to start immediately after the opening triple quote
     "D213",
 ]
-extend-include = ["*.ipynb"]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
-[tool.ruff.per-file-ignores]
+[tool.ruff.lint.per-file-ignores]
 "docs/*" = [
     "B018", # Trailing expressions in notebooks are not “useless”
     "D103", # No need for docstrings in functions, we use literate programming
@@ -125,5 +127,5 @@ skip = [
     "docs/changelog.md",
     "docs/references.bib",
     "docs/references.md",
-    "docs/notebooks/example.ipynb"
+    "docs/notebooks/example.ipynb",
 ]
