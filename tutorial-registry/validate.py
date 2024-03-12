@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 """Validate tutorials' meta.yaml and generate an output directory with json/images to be uploaded on github pages."""
+
 from __future__ import annotations
 
 import argparse
