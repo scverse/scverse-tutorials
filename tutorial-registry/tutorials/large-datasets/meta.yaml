@@ -1,0 +1,14 @@
+name: Subsampling cells
+description: |
+  In this tutorial, we demonstrate subsampling with scverse data objects.
+link: # TODO https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_backed.html#working-with-scverse-objects-in-backed-mode
+primary_category: Large Datasets # Data structures
+image: icon.png
+tags:
+  - large datasets
+packages:
+  - anndata
+  - mudata
+  - scanpy
+authors:
+  - eroell
