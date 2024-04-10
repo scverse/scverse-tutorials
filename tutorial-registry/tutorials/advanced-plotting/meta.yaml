@@ -2,7 +2,7 @@ name: Advanced plotting
 description: |
   This tutorial explains how to customize matplotlib plots generated
   by scanpy or other scverse libraries.
-link: https://scanpy-tutorials.readthedocs.io/en/latest/plotting/advanced.html
+link: https://scanpy.readthedocs.io/en/stable/tutorials/plotting/advanced.html
 image: icon.png
 primary_category: Tips & Tricks
 tags:
