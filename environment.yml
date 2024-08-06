@@ -9,7 +9,7 @@ dependencies:
   - ipython
   - jupyterlab-myst
   - jupytext
-  - pip
+  - pip>=24.2
   - pip:
       - "pandas<2"
       - scanpy
