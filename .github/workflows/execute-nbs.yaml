@@ -28,7 +28,7 @@ jobs:
           filter: blob:none
           fetch-depth: 0
       - name: Cache conda
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           # Increase this value to reset cache if env file has not changed
           CACHE_NUMBER: 0
@@ -36,14 +36,14 @@ jobs:
           path: ~/conda_pkgs_dir
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
       - name: Cache notebooks
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         env:
           # Increase this value to reset cache if env file has not changed
           CACHE_NUMBER: 0
         with:
           path: .jupyter_cache
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
-      - uses: conda-incubator/setup-miniconda@v2
+      - uses: conda-incubator/setup-miniconda@v3
         with:
           activate-environment: tutorials
           channel-priority: strict
