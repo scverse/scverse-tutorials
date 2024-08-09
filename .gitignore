@@ -17,6 +17,9 @@ __pycache__/
 /docs/generated/
 /docs/_build/
 
+# User configuration
+/hatch.toml
+
 # IDEs
 /.idea/
 /.vscode/

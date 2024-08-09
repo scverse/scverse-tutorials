@@ -3,18 +3,19 @@ name: tutorials
 channels:
   - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.12
   - jupyter-cache
   - ipykernel
   - ipython
+  - jupyterlab-myst
   - jupytext
-  - pip
+  - pip>=24.2
   - pip:
-      - "pandas<2"
-      - scanpy
+      - scanpy>=1.10
       - scrublet
       - leidenalg
-      - decoupler
+      # We need this commit: https://github.com/saezlab/decoupler-py/commit/0b3d9a975e06230ebbc32a6f97810be1730b8562
+      - decoupler @ git+https://github.com/saezlab/decoupler-py.git
       - celltypist
       - seaborn
       - mudata
