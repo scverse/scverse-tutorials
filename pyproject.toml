@@ -43,6 +43,9 @@ docs = [
     "sphinx-copybutton",
 ]
 
+[tool.hatch.envs.default]
+installer = "uv"
+
 [tool.hatch.envs.registry]
 features = ["registry"]
 [tool.hatch.envs.registry.scripts]
@@ -50,6 +53,11 @@ validate = "python tutorial-registry/validate.py {args}"
 
 [tool.hatch.envs.docs]
 features = ["docs"]
+extra-dependencies = [
+    "setuptools",  # undeclared dependency in pybtex
+    # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
+    "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
+]
 [tool.hatch.envs.docs.scripts]
 build = "sphinx-build -M html docs docs/_build {args}"
 
