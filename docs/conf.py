@@ -35,11 +35,11 @@ nitpicky = True  # Warn about broken links
 needs_sphinx = "4.0"
 
 html_context = {
-    "display_github": True,  # Integrate GitHub
-    "github_user": "your_github_username",  # Username
-    "github_repo": project_name,  # Repo name
-    "github_version": "main",  # Version
-    "conf_py_path": "/docs/",  # Path in the checkout to the docs root
+    "display_github": True,
+    "github_user": "scverse",
+    "github_repo": project_name,
+    "github_version": "main",
+    "conf_py_path": "/docs/",
 }
 
 # -- General configuration ---------------------------------------------------
