@@ -6,7 +6,7 @@ link: https://cellcharter.readthedocs.io/en/latest/notebooks/cosmx_human_nsclc.h
 image: icon.png
 primary_category: Spatial
 tags:
-  - clustering
+  - compositional analysis
 packages:
   - CellCharter
   - squidpy
