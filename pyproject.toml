@@ -7,7 +7,7 @@ name = "scverse-tutorials"
 version = "0.0.1"
 description = "Tutorials for single-cell analysis with scverse packages"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [
     {name = "scverse team"},
@@ -18,17 +18,22 @@ maintainers = [
 urls.Documentation = "https://scverse.org/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 urls.Home-page = "https://github.com/scverse/scverse-tutorials"
-dependencies = []
+classifiers = [
+    "Private :: Do Not Upload",  # Prevent uploading to PyPI
+]
 
 [project.optional-dependencies]
-dev = [
-    "pre-commit"
+dev = ["pre-commit"]
+registry = [
+    "jsonschema",
+    "pillow",
+    "httpx",
+    "pyyaml",
 ]
-doc = [
-    "docutils>=0.8,!=0.18.*,!=0.19.*",
-    "sphinx>=4",
-    "sphinx-book-theme>=1.0.0",
-    "myst-nb",
+docs = [
+    "sphinx>=7",
+    "sphinx-book-theme>=1.1.0",
+    "myst-nb>=1.1.0",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
     "sphinxext-opengraph",
@@ -38,12 +43,36 @@ doc = [
     "sphinx-copybutton",
 ]
 
+[tool.hatch.envs.default]
+installer = "uv"
+
+[tool.hatch.envs.registry]
+features = ["registry"]
+[tool.hatch.envs.registry.scripts]
+validate = "python tutorial-registry/validate.py {args}"
+
+[tool.hatch.envs.docs]
+features = ["docs"]
+extra-dependencies = [
+    "setuptools",  # undeclared dependency in pybtex
+    # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
+    "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
+]
+[tool.hatch.envs.docs.scripts]
+build = "sphinx-build -M html docs docs/_build {args}"
+
+[tool.hatch.build.targets.wheel]
+bypass-selection = true  # This is not a package
+
 [tool.black]
 line-length = 120
 
 [tool.ruff]
-src = ["src"]
 line-length = 120
+src = ["src"]
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
 select = [
     "F",  # Errors detected by Pyflakes
     "E",  # Error detected by Pycodestyle
@@ -58,7 +87,7 @@ select = [
     "RUF100",  # Report unused noqa directives
 ]
 ignore = [
-    # line too long -> we accept long comment lines; black gets rid of long code lines
+    # line too long -> we accept long comment lines; formatter gets rid of long code lines
     "E501",
     # Do not assign a lambda expression, use a def -> lambda expression assignments are convenient
     "E731",
@@ -72,7 +101,7 @@ ignore = [
     "D107",
     # Errors from function calls in argument defaults. These are fine when the result is immutable.
     "B008",
-    # __magic__ methods are are often self-explanatory, allow missing docstrings
+    # __magic__ methods are often self-explanatory, allow missing docstrings
     "D105",
     # first line should end with a period [Bug: doesn't work with single-line docstrings]
     "D400",
@@ -85,11 +114,15 @@ ignore = [
     "D213",
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "numpy"
 
-[tool.ruff.per-file-ignores]
-"docs/*" = ["I"]
+[tool.ruff.lint.per-file-ignores]
+"docs/*" = [
+    "B018", # Trailing expressions in notebooks are not “useless”
+    "D103", # No need for docstrings in functions, we use literate programming
+    "E402", # Imports in non-top cells are fine
+]
 "tests/*" = ["D"]
 "*/__init__.py" = ["F401"]
 
@@ -102,5 +135,5 @@ skip = [
     "docs/changelog.md",
     "docs/references.bib",
     "docs/references.md",
-    "docs/notebooks/example.ipynb"
+    "docs/notebooks/example.ipynb",
 ]

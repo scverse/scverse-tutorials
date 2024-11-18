@@ -1,0 +1,2 @@
+# fix from here: https://github.com/executablebooks/MyST-NB/pull/597
+myst-nb @ git+https://github.com/flying-sheep/MyST-NB@eval-metadata
