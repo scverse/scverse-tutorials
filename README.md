@@ -7,9 +7,9 @@ performed with scverse core and ecosystem packages.
 
 To this end, this repository contains
 
--   a registry for tutorials listed on [scverse.org/learn](https://scverse.org/learn) (see `tutorial-registry`)
--   shared tutorials that complement more specific tutorials provided by invidiual [core](https://scverse.org/packages/)
-    and [ecosystem](https://scverse.org/packages/#ecosystem) packages (see `docs`)
+- a registry for tutorials listed on [scverse.org/learn](https://scverse.org/learn) (see `tutorial-registry`)
+- shared tutorials that complement more specific tutorials provided by invidiual [core](https://scverse.org/packages/)
+  and [ecosystem](https://scverse.org/packages/#ecosystem) packages (see `docs`)
 
 ## Adding tutorials
 
@@ -19,12 +19,12 @@ improvements.
 
 To be added to our website, tutorials must fulfill at least the following requirements:
 
--   all featured packages must be scverse [core](https://scverse.org/packages/#core-packages) or
-    [approved ecosystem packages](https://scverse.org/packages/#ecosystem). This does not apply to packages that are not
-    specific to omics data analysis (e.g. pandas, seaborn).
--   the notebook author agrees to maintain the tutorial in the future and is reachable via [zulip](https://scverse.zulipchat.com).
--   the notebook contains a backlink to [scverse.org/learn](https://scverse.org/learn)
--   the notebook is self-contained: All required example data is downloaded as part of the tutorial
+- all featured packages must be scverse [core](https://scverse.org/packages/#core-packages) or
+  [approved ecosystem packages](https://scverse.org/packages/#ecosystem). This does not apply to packages that are not
+  specific to omics data analysis (e.g. pandas, seaborn).
+- the notebook author agrees to maintain the tutorial in the future and is reachable via [zulip](https://scverse.zulipchat.com).
+- the notebook contains a backlink to [scverse.org/learn](https://scverse.org/learn)
+- the notebook is self-contained: All required example data is downloaded as part of the tutorial
 
 You can easily check your changes to tutorials or the registry locally:
 
