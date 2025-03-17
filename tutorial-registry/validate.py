@@ -9,7 +9,7 @@ import shutil
 import sys
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Literal, Any
 
 import httpx
 import jsonschema
@@ -70,7 +70,7 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict
         yield tmp_tutorial
 
 
-def load_categories(categories_file: Path):
+def load_categories(categories_file: Path) -> dict[str, Any]:
     """Load the categories JSON."""
     with open(categories_file) as f:
         return yaml.load(f, yaml.SafeLoader)

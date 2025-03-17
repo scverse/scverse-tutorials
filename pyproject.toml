@@ -64,9 +64,6 @@ build = "sphinx-build -M html docs docs/_build {args}"
 [tool.hatch.build.targets.wheel]
 bypass-selection = true  # This is not a package
 
-[tool.black]
-line-length = 120
-
 [tool.ruff]
 line-length = 120
 src = ["src"]

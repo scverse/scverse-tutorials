@@ -6,6 +6,7 @@ description: |
 link: https://anndata.readthedocs.io/en/latest/concatenation.html
 image: icon.png
 primary_category: Data structures
+order: 30
 tags:
   - concatenation
 packages:

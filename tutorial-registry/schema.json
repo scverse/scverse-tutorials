@@ -37,6 +37,10 @@
                 "Tips & Tricks"
             ]
         },
+        "order": {
+            "description": "Order of appearence on the website. Lower numbers mean earlier (higher priority).",
+            "type": "number"
+        },
         "modality": {
             "description": "Which modalities are used in the tutorial?",
             "type": "array",

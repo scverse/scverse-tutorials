@@ -6,6 +6,7 @@ description: |
 link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/multimodal/MultiVI_tutorial.html
 image: icon.png
 primary_category: ATAC-seq
+order: 20
 tags:
   - preprocessing
   - visualization

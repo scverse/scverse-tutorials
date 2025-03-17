@@ -5,6 +5,7 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_interoperability.html
 image: icon.png
 primary_category: Tips & Tricks
+order: 20
 tags:
   - interoperability
 packages:

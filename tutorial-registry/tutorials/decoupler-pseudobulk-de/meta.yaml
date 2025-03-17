@@ -5,6 +5,7 @@ description: |
 link: https://decoupler-py.readthedocs.io/en/latest/notebooks/pseudobulk.html
 image: icon.png
 primary_category: scRNA-seq
+order: 30
 tags:
   - differential expression
   - functional analysis

@@ -4,6 +4,7 @@ description: |
   correct batch effects, and perform differential gene expression analysis.
 link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/quick_start/api_overview.html
 primary_category: scRNA-seq
+order: 30
 image: icon.svg
 tags:
   - preprocessing

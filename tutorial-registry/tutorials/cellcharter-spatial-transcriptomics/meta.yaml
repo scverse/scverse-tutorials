@@ -5,6 +5,7 @@ description: |
 link: https://cellcharter.readthedocs.io/en/latest/notebooks/cosmx_human_nsclc.html
 image: icon.png
 primary_category: Spatial
+order: 20
 tags:
   - compositional analysis
 packages:

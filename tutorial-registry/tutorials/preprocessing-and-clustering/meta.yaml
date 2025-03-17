@@ -6,6 +6,7 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/basic-scrna-tutorial.html
 image: icon.webp
 primary_category: scRNA-seq
+order: 10
 tags:
   - preprocessing
   - cell-type annotation

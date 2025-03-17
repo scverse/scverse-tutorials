@@ -5,6 +5,7 @@ description: |
 link: https://scanpy-tutorials.readthedocs.io/en/latest/plotting/core.html
 image: icon.png
 primary_category: Tips & Tricks
+order: 10
 tags:
   - visualization
 packages:
