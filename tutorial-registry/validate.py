@@ -9,7 +9,7 @@ import shutil
 import sys
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING, Literal, Any
+from typing import TYPE_CHECKING, Any, Literal
 
 import httpx
 import jsonschema
