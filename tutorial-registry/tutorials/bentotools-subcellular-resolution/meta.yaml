@@ -5,6 +5,7 @@ description: |
 link: https://squidpy.readthedocs.io/en/latest/notebooks/tutorials/tutorial_vizgen_mouse_liver.html
 image: icon.png
 primary_category: Spatial
+order: 10
 tags:
   - preprocessing
   - visualization

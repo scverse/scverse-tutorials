@@ -4,6 +4,7 @@ description: |
 link: https://www.sc-best-practices.org/trajectories/pseudotemporal.html#
 image: icon.png
 primary_category: scRNA-seq
+order: 40
 tags:
   - pseudotime
   - visualization

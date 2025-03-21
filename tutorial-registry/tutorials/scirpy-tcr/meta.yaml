@@ -5,6 +5,7 @@ description: |
   and compute repertoire overlaps between patients.
 link: https://scirpy.scverse.org/en/latest/tutorials/tutorial_3k_tcr.html
 primary_category: Adaptive immune cell receptor
+order: 10
 image: icon.svg
 tags:
   - quality control

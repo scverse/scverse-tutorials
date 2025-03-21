@@ -5,6 +5,7 @@ description: |
 link: https://bento-tools.readthedocs.io/en/latest/index.html
 image: icon.png
 primary_category: Spatial
+order: 30
 tags:
   - preprocessing
   - visualization

@@ -5,6 +5,7 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorial_concatenation_anndata_mudata.html
 image: icon.png
 primary_category: Data structures
+order: 40
 tags:
   - concatenation
 packages:

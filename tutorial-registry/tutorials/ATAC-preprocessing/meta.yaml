@@ -6,6 +6,7 @@ description: |
 link: https://muon-tutorials.readthedocs.io/en/latest/single-cell-rna-atac/pbmc10k/2-Chromatin-Accessibility-Processing.html
 image: icon.png
 primary_category: ATAC-seq
+order: 10
 tags:
   - preprocessing
   - multimodal

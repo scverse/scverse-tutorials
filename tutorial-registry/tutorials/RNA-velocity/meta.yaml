@@ -5,6 +5,7 @@ description: |
 link: https://scvelo.readthedocs.io/en/stable/getting_started.html
 image: icon.png
 primary_category: scRNA-seq
+order: 50
 tags:
   - preprocessing
   - RNA velocity

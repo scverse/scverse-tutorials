@@ -6,6 +6,7 @@ description: |
 link: https://www.sc-best-practices.org/conditions/perturbation_modeling.html
 image: icon.png
 primary_category: scRNA-seq
+order: 60
 tags:
   - perturbation
 packages:

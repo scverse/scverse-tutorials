@@ -6,6 +6,7 @@ description: |
 link: https://www.sc-best-practices.org/conditions/compositional.html
 image: icon.png
 primary_category: scRNA-seq
+order: 70
 tags:
   - compositional analysis
 packages:

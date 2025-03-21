@@ -9,7 +9,7 @@ import shutil
 import sys
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 import httpx
 import jsonschema
@@ -50,27 +50,48 @@ def _check_image(img_path: Path) -> None:
 def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict, None, None]:
     """Find all tutorial `meta.yaml` files in the tutorials dir and yield tutorial records."""
     schema = json.loads(schema_file.read_bytes())
-
     known_links = set()
+    known_primary_to_orders: dict[str, set[int]] = {}
 
     for tmp_meta_file in tutorials_dir.rglob("meta.yaml"):
         tutorial_id = tmp_meta_file.parent.name
         with tmp_meta_file.open() as f:
             tmp_tutorial = yaml.load(f, yaml.SafeLoader)
+
         jsonschema.validate(tmp_tutorial, schema)
+
         link = tmp_tutorial["link"]
         if link in known_links:
             raise ValueError(f"When validating {tmp_meta_file}: Duplicate link: {link}")
         known_links.add(link)
+
+        # Check for duplicate orders within the same primary category
+        primary_category = tmp_tutorial.get("primary_category")
+        order = tmp_tutorial.get("order")
+
+        if primary_category and order is not None:
+            if primary_category not in known_primary_to_orders:
+                known_primary_to_orders[primary_category] = set()
+
+            if order in known_primary_to_orders[primary_category]:
+                raise ValueError(
+                    f"When validating {tmp_meta_file}: Duplicate order {order} "
+                    f"for primary category '{primary_category}'"
+                )
+
+            known_primary_to_orders[primary_category].add(order)
+
         _check_url_exists(link)
+
         # replace image path by absolute local path to image
         img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
         _check_image(img_path)
         tmp_tutorial["image"] = str(img_path)
+
         yield tmp_tutorial
 
 
-def load_categories(categories_file: Path):
+def load_categories(categories_file: Path) -> dict[str, Any]:
     """Load the categories JSON."""
     with open(categories_file) as f:
         return yaml.load(f, yaml.SafeLoader)

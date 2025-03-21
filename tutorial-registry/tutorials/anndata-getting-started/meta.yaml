@@ -5,6 +5,7 @@ description: |
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/anndata_getting_started.html
 image: icon.svg
 primary_category: Data structures
+order: 10
 tags:
   - data structures
 packages:
