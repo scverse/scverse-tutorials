@@ -6,10 +6,12 @@
 :hidden: true
 :maxdepth: 1
 
-api.md
-changelog.md
-developer_docs.md
-references.md
+notebooks/basic-scrna-tutorial
+notebooks/anndata_getting_started
+notebooks/tutorial_axes_anndata_mudata
+notebooks/scverse_data_backed
+notebooks/scverse_data_interoperability
+notebooks/tutorial_concatenation_anndata_mudata
 
-notebooks/example
+references.md
 ```

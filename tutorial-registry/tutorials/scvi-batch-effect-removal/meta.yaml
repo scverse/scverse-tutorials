@@ -1,0 +1,16 @@
+name: Batch-effect removal with scvi-tools
+description: |
+  In this tutorial, we demonstrate how to use scvi-tools to fit a model to single-cell count data,
+  correct batch effects, and perform differential gene expression analysis.
+link: https://docs.scvi-tools.org/en/stable/tutorials/notebooks/quick_start/api_overview.html
+primary_category: scRNA-seq
+order: 20
+image: icon.svg
+tags:
+  - preprocessing
+  - differential expression
+packages:
+  - scvi-tools
+authors:
+  - martinkim0
+  - adamgayoso

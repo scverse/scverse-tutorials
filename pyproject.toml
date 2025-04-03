@@ -4,10 +4,11 @@ requires = [ "hatchling" ]
 
 [project]
 name = "scverse-tutorials"
+name = "scverse-tutorials"
 version = "0.0.1"
-description = "A very interesting piece of code"
+description = "Tutorials for single-cell analysis with scverse packages"
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "BSD-3-Clause"
 maintainers = [
   { name = "scverse team", email = "core-team@scverse.org" },
 ]
@@ -27,25 +28,18 @@ dependencies = [
   # for debug logging (referenced from the issue template)
   "session-info2",
 ]
-optional-dependencies.dev = [
-  "pre-commit",
-  "twine>=4.0.2",
-]
-optional-dependencies.doc = [
-  "docutils>=0.8,!=0.18.*,!=0.19.*",
+optional-dependencies.dev = [ "pre-commit" ]
+optional-dependencies.docs = [
+  "sphinx>=7",
+  "sphinx-book-theme>=1.1.0",
+  "myst-nb>=1.1.0",
+  "sphinxcontrib-bibtex>=1.0.0",
+  "sphinx-autodoc-typehints",
+  "sphinxext-opengraph",
+  # For notebooks
   "ipykernel",
   "ipython",
-  "myst-nb>=1.1",
-  "pandas",
-  # Until pybtex >0.24.0 releases: https://bitbucket.org/pybtex-devs/pybtex/issues/169/
-  "setuptools",
-  "sphinx>=4",
-  "sphinx-autodoc-typehints",
-  "sphinx-book-theme>=1",
   "sphinx-copybutton",
-  "sphinx-tabs",
-  "sphinxcontrib-bibtex>=1",
-  "sphinxext-opengraph",
 ]
 optional-dependencies.test = [
   "coverage",
@@ -56,12 +50,15 @@ urls.Documentation = "https://scverse-tutorials.readthedocs.io/"
 urls.Homepage = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 
+[tool.hatch.build.targets.wheel]
+bypass-selection = true  # This is not a package
+
 [tool.hatch.envs.default]
 installer = "uv"
 features = [ "dev" ]
 
 [tool.hatch.envs.docs]
-features = [ "doc" ]
+features = [ "docs" ]
 scripts.build = "sphinx-build -M html docs docs/_build {args}"
 scripts.open = "python -m webbrowser -t docs/_build/html/index.html"
 scripts.clean = "git clean -fdX -- {args:docs}"
@@ -105,8 +102,13 @@ lint.ignore = [
   "E741", # allow I, O, l as variable names -> I is the identity matrix
 ]
 lint.per-file-ignores."*/__init__.py" = [ "F401" ]
-lint.per-file-ignores."docs/*" = [ "I" ]
+lint.per-file-ignores."docs/*" = [
+  "B018", # Trailing expressions in notebooks are not “useless”
+  "D103", # No need for docstrings in functions, we use literate programming
+  "E402", # Imports in non-top cells are fine
+]
 lint.per-file-ignores."tests/*" = [ "D" ]
+
 lint.pydocstyle.convention = "numpy"
 
 [tool.pytest.ini_options]
@@ -131,5 +133,5 @@ skip = [
   "docs/changelog.md",
   "docs/references.bib",
   "docs/references.md",
-  "docs/notebooks/example.ipynb",
+  "docs/notebooks/example.ipynb",,
 ]

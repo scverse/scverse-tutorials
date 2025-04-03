@@ -1,0 +1,88 @@
+name: Execute notebooks
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/execute-nbs.yaml"
+      - "docs/**"
+      - "environment.yml"
+
+defaults:
+  run:
+    shell: bash -el {0}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  runnbs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Allow GH actions to push changes to repo
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.head_ref }}
+          filter: blob:none
+          fetch-depth: 0
+      - name: Cache conda
+        uses: actions/cache@v4
+        env:
+          # Increase this value to reset cache if env file has not changed
+          CACHE_NUMBER: 0
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
+      - name: Cache notebooks
+        uses: actions/cache@v4
+        env:
+          # Increase this value to reset cache if env file has not changed
+          CACHE_NUMBER: 0
+        with:
+          path: .jupyter_cache
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: tutorials
+          channel-priority: flexible
+          environment-file: environment.yml
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+          use-mamba: true
+          # some important packages are not available as .tar.bz2 anymore
+          # use-only-tar-bz2: true # This needs to be set for caching to work properly!
+
+      - name: execute notebooks
+        run: |
+          mkdir -p .jupyter_cache
+          # set kernel to "python3" (just in case someone used a custom conda env kernel locally)
+          for f in docs/notebooks/*.ipynb ; do
+              jupytext --to notebook --set-kernel python3 $f
+          done
+
+          # First remove all notebooks from the project, then add all again.
+          # This does not remove them from the cache. This step is required since a notebook could be in the cache, but not in the PR.
+          jcache notebook clear --force
+          jcache notebook add docs/notebooks/*.ipynb
+          jcache project execute --timeout 1800
+
+      - name: output logs
+        run: |
+          jcache notebook list
+          for f in docs/notebooks/*.ipynb ; do
+            jcache notebook info --tb $f
+          done
+
+      # write changed outputs back to the ipynb files
+      # will fail if there was an execution error
+      - name: merge notebooks
+        run: |
+          for f in docs/notebooks/*.ipynb ; do
+            jcache notebook merge $f $f
+          done
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Render notebooks

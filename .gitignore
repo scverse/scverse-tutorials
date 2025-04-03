@@ -1,3 +1,10 @@
+# Caches
+/.*cache/
+/node_modules/
+/data/
+.ipynb_checkpoints/
+__pycache__/
+
 # Temp files
 .DS_Store
 *~
@@ -5,8 +12,6 @@ buck-out/
 
 # Compiled files
 .venv/
-__pycache__/
-.*cache/
 
 # Distribution / packaging
 /dist/
@@ -18,3 +23,6 @@ __pycache__/
 # docs
 /docs/generated/
 /docs/_build/
+
+# User configuration
+/hatch.toml
