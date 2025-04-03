@@ -92,7 +92,6 @@ intersphinx_mapping = {
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
     "numpy": ("https://numpy.org/doc/stable/", None),
-    "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
 }
 
 # List of patterns, relative to source directory, that match files and
@@ -124,8 +123,6 @@ html_theme_options = {
     "path_to_docs": "docs/",
     "navigation_with_keys": False,
     "use_repository_button": True,
-    "path_to_docs": "docs/",
-    "navigation_with_keys": False,
     "launch_buttons": {
         "binderhub_url": "https://mybinder.org",
         # "colab_url": "https://colab.research.google.com",

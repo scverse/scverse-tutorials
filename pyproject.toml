@@ -41,10 +41,13 @@ optional-dependencies.docs = [
   "ipython",
   "sphinx-copybutton",
 ]
-optional-dependencies.test = [
-  "coverage",
-  "pytest",
+optional-dependencies.registry = [
+    "jsonschema",
+    "pillow",
+    "httpx",
+    "pyyaml",
 ]
+
 # https://docs.pypi.org/project_metadata/#project-urls
 urls.Documentation = "https://scverse-tutorials.readthedocs.io/"
 urls.Homepage = "https://github.com/scverse/scverse-tutorials"
@@ -57,14 +60,21 @@ bypass-selection = true  # This is not a package
 installer = "uv"
 features = [ "dev" ]
 
+[tool.hatch.envs.registry]
+features = ["registry"]
+[tool.hatch.envs.registry.scripts]
+validate = "python tutorial-registry/validate.py {args}"
+
 [tool.hatch.envs.docs]
 features = [ "docs" ]
+extra-dependencies = [
+    "setuptools",  # undeclared dependency in pybtex
+    # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
+    "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
+]
 scripts.build = "sphinx-build -M html docs docs/_build {args}"
 scripts.open = "python -m webbrowser -t docs/_build/html/index.html"
 scripts.clean = "git clean -fdX -- {args:docs}"
-
-[tool.hatch.envs.hatch-test]
-features = [ "test" ]
 
 [tool.ruff]
 line-length = 120
@@ -110,19 +120,6 @@ lint.per-file-ignores."docs/*" = [
 lint.per-file-ignores."tests/*" = [ "D" ]
 
 lint.pydocstyle.convention = "numpy"
-
-[tool.pytest.ini_options]
-testpaths = [ "tests" ]
-xfail_strict = true
-addopts = [
-  "--import-mode=importlib", # allow using test files with same name
-]
-
-[tool.coverage.run]
-source = [ "scverse_tutorials" ]
-omit = [
-  "**/test_*.py",
-]
 
 [tool.cruft]
 skip = [
