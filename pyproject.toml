@@ -29,22 +29,21 @@ dependencies = [
 ]
 optional-dependencies.dev = [ "pre-commit" ]
 optional-dependencies.docs = [
-  "sphinx>=7",
-  "sphinx-book-theme>=1.1.0",
-  "myst-nb>=1.1.0",
-  "sphinxcontrib-bibtex>=1.0.0",
-  "sphinx-autodoc-typehints",
-  "sphinxext-opengraph",
-  # For notebooks
-  "ipykernel",
+  "ipykernel",                # For notebooks
   "ipython",
+  "myst-nb>=1.1",
+  "sphinx>=7",
+  "sphinx-autodoc-typehints",
+  "sphinx-book-theme>=1.1",
   "sphinx-copybutton",
+  "sphinxcontrib-bibtex>=1",
+  "sphinxext-opengraph",
 ]
 optional-dependencies.registry = [
-    "jsonschema",
-    "pillow",
-    "httpx",
-    "pyyaml",
+  "httpx",
+  "jsonschema",
+  "pillow",
+  "pyyaml",
 ]
 
 # https://docs.pypi.org/project_metadata/#project-urls
@@ -53,23 +52,23 @@ urls.Homepage = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 
 [tool.hatch.build.targets.wheel]
-bypass-selection = true  # This is not a package
+bypass-selection = true # This is not a package
 
 [tool.hatch.envs.default]
 installer = "uv"
 features = [ "dev" ]
 
 [tool.hatch.envs.registry]
-features = ["registry"]
+features = [ "registry" ]
 [tool.hatch.envs.registry.scripts]
 validate = "python tutorial-registry/validate.py {args}"
 
 [tool.hatch.envs.docs]
 features = [ "docs" ]
 extra-dependencies = [
-    "setuptools",  # undeclared dependency in pybtex
-    # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
-    "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
+  "setuptools", # undeclared dependency in pybtex
+  # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
+  "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
 ]
 scripts.build = "sphinx-build -M html docs docs/_build {args}"
 scripts.open = "python -m webbrowser -t docs/_build/html/index.html"

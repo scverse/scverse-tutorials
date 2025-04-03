@@ -66,4 +66,3 @@ repos:
         language: fail
         files: "^tutorial-registry/tutorials/.*$"
         exclude: "^tutorial-registry/tutorials/.*/(meta\\.yaml|icon\\.(svg|png|webp))$"
-
