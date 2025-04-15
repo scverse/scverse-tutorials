@@ -8,18 +8,21 @@ __pycache__/
 # Temp files
 .DS_Store
 *~
+buck-out/
 
-# Virtual environments
+# Compiled files
 .venv/
 
-# Build artifacts
+# Distribution / packaging
 /dist/
+
+# Tests and coverage
+/data/
+/node_modules/
+
+# docs
 /docs/generated/
 /docs/_build/
 
 # User configuration
 /hatch.toml
-
-# IDEs
-/.idea/
-/.vscode/
