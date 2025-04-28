@@ -96,7 +96,6 @@ intersphinx_mapping = {
     "dask": ("https://docs.dask.org/en/stable", None),
     "scipy": ("https://docs.scipy.org/doc/scipy", None),
     "rapids-singlecell": ("https://rapids-singlecell.readthedocs.io/en/stable/", None),
-    "array-api": ("https://data-apis.org/array-api/latest/index.html", None),
 }
 
 # List of patterns, relative to source directory, that match files and
