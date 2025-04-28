@@ -69,7 +69,7 @@ You can alawys reduce the number of workers you use, which will cause more memor
 
 **How do I choose chunk sizes?**
 
-Have a look at the {doc}`dask docs for chunking <dask:array-chunks>`, however the general rule of thumb there is to use larger chunks in memory than on disk.  In this sense, it is probably a good idea to use the largest chunk size in memory allowable by your memory limits in order to maximize any thread-level parallelization in algorithms to its fullest.
+Have a look at the {doc}`dask docs for chunking <dask:array-chunks>`, however the general rule of thumb there is to use larger chunks in memory than on disk.  In this sense, it is probably a good idea to use the largest chunk size in memory allowable by your memory limits (and the algorithms you use) in order to maximize any thread-level parallelization in algorithms to its fullest.  For sparse data, where the chunks in-memory do not map to those on disk, maxing out the memory available by choosing a large chunk size becomes more imperative.
 
 [`dask` extension]: https://marketplace.visualstudio.com/items?itemName=joyceerhl.vscode-das
 [our custom h5 io code]: https://github.com/scverse/anndata/blob/089ed929393a02200b389395f278b7c920e5bc4a/src/anndata/_io/specs/lazy_methods.py#L179-L20
