@@ -33,6 +33,7 @@ registry = [
 docs = [
     "sphinx>=7",
     "sphinx-book-theme>=1.1.0",
+    "sphinx-issues>=5.0.1",
     "myst-nb>=1.1.0",
     "sphinxcontrib-bibtex>=1.0.0",
     "sphinx-autodoc-typehints",
