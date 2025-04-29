@@ -9,9 +9,9 @@ Here we will go through some common questions and answers about `dask`, with a s
 If you are in a jupyter notebook, when you render the `repr` of your `client`, you will see a link, usually something like `http://localhost:8787/status`.
 If you are working locally, this link alone should suffice.
 
-If you are working on some sort of remote notebook from a web browser, you will need to replace `http://localhost:8787` by the root url of the notebook.
+If you are working on some sort of remote notebook from a web browser, you will need to replace `http://localhost` by the root url of the notebook.
 
-If you are in vscode, there is an [`dask` extension] which will allow you to monitor there.
+If you are in vscode, there is a [`dask` extension] which will allow you to monitor there.
 
 **How do I know how to allocate resources?**
 
@@ -68,7 +68,8 @@ These are the summed together to produce a single `(n_vars,n_vars)` matrix, whic
 Because `dask` does not implement matrix multiplication for sparse-in-dask, we do it ourselves.
 We use `map_blocks` over a CSR sparse-in-dask array where the chunking looks something like `(chunk_size, n_vars)`.
 When we compute the invdividual block's gram matrix, we add an axis via `[None, ...]` so that we can sum over that axis i.e., the `da.map_blocks` call produces a `(n_obs // chunk_size, n_vars, n_vars)` sized-matrix which is summed over the first dimension.
-However, to make this work, we need to be very specific about how `da.map_blocks` expects its result to look like, done via `new_axis` and `chunks` `new_axis` indicates that we are adding a single new axis at the front.
+However, to make this work, we need to be very specific about how `da.map_blocks` expects its result to look like, done via `new_axis` and `chunks`.
+`new_axis` indicates that we are adding a single new axis at the front.
 The `chunks` argument specifices that the output of `da.map_blocks` should have `x.blocks.size` number of `(1, n_vars, n_vars)` matrixes.
 This `chunks` argument thus allows the inferral of the shape of the output.
 
