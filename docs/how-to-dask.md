@@ -63,21 +63,21 @@ gram_matrix_dask = da.map_blocks(
 ```
 
 This algorithm goes through every `chunk_size` number of rows and calculates the gram matrix for those rows producing a collection of `(n_vars,n_vars)` size matrix.
-These are the summed together to produce a single `(n_vars,n_vars)` matrix, which is the gram amtrix.
+These are the summed together to produce a single `(n_vars,n_vars)` matrix, which is the gram matrix.
 
 Because `dask` does not implement matrix multiplication for sparse-in-dask, we do it ourselves.
 We use `map_blocks` over a CSR sparse-in-dask array where the chunking looks something like `(chunk_size, n_vars)`.
-When we compute the invdividual block's gram matrix, we add an axis via `[None, ...]` so that we can sum over that axis i.e., the `da.map_blocks` call produces a `(n_obs // chunk_size, n_vars, n_vars)` sized-matrix which is summed over the first dimension.
+When we compute the individual block's gram matrix, we add an axis via `[None, ...]` so that we can sum over that axis i.e., the `da.map_blocks` call produces a `(n_obs // chunk_size, n_vars, n_vars)` sized-matrix which is summed over the first dimension.
 However, to make this work, we need to be very specific about how `da.map_blocks` expects its result to look like, done via `new_axis` and `chunks`.
 `new_axis` indicates that we are adding a single new axis at the front.
-The `chunks` argument specifices that the output of `da.map_blocks` should have `x.blocks.size` number of `(1, n_vars, n_vars)` matrixes.
+The `chunks` argument specifies that the output of `da.map_blocks` should have `x.blocks.size` number of `(1, n_vars, n_vars)` matrixes.
 This `chunks` argument thus allows the inferral of the shape of the output.
 
 While this example is a bit complicated it shows how you can go from a matrix of one shape and chunking to another by operating in a clean way over blocks.
 
 ## FAQ
 
-### What is `persist` for in RSC noteboooks?
+### What is `persist` for in RSC notebooks?
 
 In the {doc}`multi-gpu showcase notebook for rapids-singlecell <rapids-singlecell:notebooks/06-multi_gpu_show>`, {meth}`dask.array.Array.persist` appears across the notebook.
 This loads the entire dataset into memory while keeping the representation as a dask array.
@@ -86,7 +86,7 @@ The catch is that you have enough memory to use `persist`.
 
 ### I'm out of memory, what now?
 
-You can alawys reduce the number of workers you use, which will cause more memory to be allocated per worker.
+You can always reduce the number of workers you use, which will cause more memory to be allocated per worker.
 Some algorithms may have limitations with loading all data onto a single node; see {issue}`dask/dask-ml#985` for an example.
 
 ### How do I choose chunk sizes?
