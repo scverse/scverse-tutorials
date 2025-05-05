@@ -61,6 +61,8 @@ extra-dependencies = [
 ]
 [tool.hatch.envs.docs.scripts]
 build = "sphinx-build -M html docs docs/_build {args}"
+open = "python3 -m webbrowser -t docs/_build/html/index.html"
+clean = "git clean -fdX -- {args:docs}"
 
 [tool.hatch.build.targets.wheel]
 bypass-selection = true  # This is not a package

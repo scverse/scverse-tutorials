@@ -1,9 +1,0 @@
-[envs.default]
-installer = "uv"
-features = [ "dev" ]
-
-[envs.docs]
-features = [ "docs" ]
-scripts.build = "sphinx-build -M html docs docs/_build -W --keep-going {args}"
-scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
-scripts.clean = "git clean -fdX -- {args:docs}"
