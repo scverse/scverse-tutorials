@@ -4,7 +4,7 @@ Here we will go through some common questions and answers about `dask`, with a s
 
 ## Quickstart
 
-**How do I monitor the {doc}`dask dashboard <dask:dashboard>`?**
+### How do I monitor the {doc}`dask dashboard <dask:dashboard>`?
 
 If you are in a jupyter notebook, when you render the `repr` of your `client`, you will see a link, usually something like `http://localhost:8787/status`.
 If you are working locally, this link alone should suffice.
@@ -13,7 +13,7 @@ If you are working on some sort of remote notebook from a web browser, you will 
 
 If you are in vscode, there is a [`dask` extension] which will allow you to monitor there.
 
-**How do I know how to allocate resources?**
+### How do I know how to allocate resources?
 
 In `dask`, every worker will receive an equal share of the memory available.
 So if you request e.g., a slurm job with 256GB of RAM, and then start 8 workers, each will have 32 GB of memory.
@@ -22,7 +22,7 @@ So if you request e.g., a slurm job with 256GB of RAM, and then start 8 workers,
 So if you have dense chunks of `(30_000, 30_000)` with 32 bit integers, you will need to be have 3.6 GB for each worker, at the minimum to even load the data.
 Then if you do something like matrix multiplication, you will need double or even more, as an example.
 
-**How do I read my data into a `dask` array?**
+### How do I read my data into a `dask` array?
 
 {func}`anndata.experimental.read_elem_lazy` or {func}`anndata.experimental.read_lazy` can help you if you already have data on-disk that was written to the `anndata` file format.
 If you use {func}`dask.array.to_zarr`, the data _cannot_ be read in using `anndata`'s functionality as `anndata` will look for its {doc}`specified file format metadata <anndata:fileformat-prose>`.
@@ -32,7 +32,7 @@ See [our custom h5 io code] for an example.
 
 ## Advanced use and how-to-contribute
 
-**How do `scanpy` and `anndata` handle sparse matrices?**
+### How do `scanpy` and `anndata` handle sparse matrices?
 
 While there is some {class}`scipy.sparse.csr_matrix` and {class}`scipy.sparse.csc_matrix` support for `dask`, it is not comprehensive and missing key functions like summation, mean etc.
 We have implemented custom functionality, much of which lives in {mod}`fast_array_utils`, although we have also had to implement custom algorithms like `pca` for sparse-in-dask.
@@ -41,7 +41,7 @@ In the future, an [`array-api`] compatible sparse matrix like [`finch`] would he
 Therefore, if you run into a puzzling error after trying to run a function like {func}`numpy.sum` (or similar) on a sparse-in-dask array, consider checking {mod}`fast_array_utils`.
 If you need to implement the function yourself, see the next point.
 
-**Custom block-wise array operations**
+### Custom block-wise array operations
 
 Sometimes you may want to do an operation on a an array that is implemented nowhere.
 Generally, we have found {func}`dask.array.map_blocks` to be versatile enough that most operations can be expressed on it.
@@ -77,19 +77,19 @@ While this example is a bit complicated it shows how you can go from a matrix of
 
 ## FAQ
 
-**What is `persist` for in RSC noteboooks?**
+### What is `persist` for in RSC noteboooks?
 
 In the {doc}`multi-gpu showcase notebook for rapids-singlecell <rapids-singlecell:notebooks/06-multi_gpu_show>`, {meth}`dask.array.Array.persist` appears across the notebook.
 This loads the entire dataset into memory while keeping the representation as a dask array.
 Thus, lazy computation still works but only necessitates a single read into memory.
 The catch is that you have enough memory to use `persist`.
 
-**I'm out of memory, what now?**
+### I'm out of memory, what now?
 
 You can alawys reduce the number of workers you use, which will cause more memory to be allocated per worker.
 Some algorithms may have limitations with loading all data onto a single node; see {issue}`dask/dask-ml#985` for an example.
 
-**How do I choose chunk sizes?**
+### How do I choose chunk sizes?
 
 Have a look at the {doc}`dask docs for chunking <dask:array-chunks>`, however the general rule of thumb there is to use larger chunks in memory than on disk.
 In this sense, it is probably a good idea to use the largest chunk size in memory allowable by your memory limits (and the algorithms you use) in order to maximize any thread-level parallelization in algorithms to its fullest.
