@@ -1,6 +1,6 @@
 # Dask Q&A
 
-Here we will go through some common questions and answers about `dask`, with a special focus on its integration with `scanpy` and `anndata`.
+Here we will go through some common questions and answers about `dask`, with a special focus on its integration with `scanpy` and `anndata`. For more comprehensive tutorials or other topics like {doc}`launching a cluster <dask:deploying>`, head over their documentation.
 
 ## Quickstart
 
@@ -44,7 +44,8 @@ If you need to implement the function yourself, see the next point.
 ### Custom block-wise array operations
 
 Sometimes you may want to do an operation on a an array that is implemented nowhere.
-Generally, we have found {func}`dask.array.map_blocks` to be versatile enough that most operations can be expressed on it.
+Generally, we have found {func}`dask.array.map_blocks` to be versatile enough that most operations can be expressed on it. Click on the link to see `dask`'s own tutorial about the function.
+
 Take this (simplified) example of calculating a gram matrix from {func}`scanpy.pp.pca` for sparse-in-dask:
 
 ```python
