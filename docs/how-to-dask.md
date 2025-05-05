@@ -96,6 +96,6 @@ In this sense, it is probably a good idea to use the largest chunk size in memor
 For sparse data, where the chunks in-memory do not map to those on disk, maxing out the memory available by choosing a large chunk size becomes more imperative.
 
 [`dask` extension]: https://marketplace.visualstudio.com/items?itemName=joyceerhl.vscode-das
-[our custom h5 io code]: https://github.com/scverse/anndata/blob/089ed929393a02200b389395f278b7c920e5bc4a/src/anndata/_io/specs/lazy_methods.py#L179-L20
+[our custom h5 io code]: https://github.com/scverse/anndata/blob/089ed929393a02200b389395f278b7c920e5bc4a/src/anndata/_io/specs/lazy_methods.py#L179-L205
 [`array-api`]: https://data-apis.org/array-api/latest/index.html
 [`finch`]: https://github.com/finch-tensor/finch-tensor-python
