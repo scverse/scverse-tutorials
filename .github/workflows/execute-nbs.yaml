@@ -48,7 +48,7 @@ jobs:
           activate-environment: tutorials
           channel-priority: flexible
           environment-file: environment.yml
-          miniforge-variant: Mambaforge
+          miniforge-variant: Miniforge3
           miniforge-version: latest
           use-mamba: true
           # some important packages are not available as .tar.bz2 anymore
@@ -83,6 +83,6 @@ jobs:
             jcache notebook merge $f $f
           done
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Render notebooks
