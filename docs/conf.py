@@ -35,7 +35,7 @@ nitpicky = True  # Warn about broken links
 needs_sphinx = "4.0"
 
 html_context = {
-    "display_github": True,
+    "display_github": True,  # Integrate GitHub
     "github_user": "scverse",
     "github_repo": project_name,
     "github_version": "main",
@@ -89,14 +89,20 @@ source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
-    "numpy": ("https://numpy.org/doc/stable/", None),
     "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "numpy": ("https://numpy.org/doc/stable/", None),
 }
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints", ".jupyter_cache"]
+exclude_patterns = [
+    "_build",
+    "Thumbs.db",
+    ".DS_Store",
+    "**.ipynb_checkpoints",
+    ".jupyter_cache",
+]
 
 
 # -- Options for HTML output -------------------------------------------------
