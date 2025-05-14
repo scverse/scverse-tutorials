@@ -78,7 +78,7 @@ While this example is a bit complicated it shows how you can go from a matrix of
 
 ## FAQ
 
-### What is `persist` for in RSC notebooks?
+### What is `persist` used for in RSC notebooks?
 
 In the {doc}`multi-gpu showcase notebook for rapids-singlecell <rapids-singlecell:notebooks/06-multi_gpu_show>`, {meth}`dask.array.Array.persist` appears across the notebook.
 This loads the entire dataset into memory while keeping the representation as a dask array.
