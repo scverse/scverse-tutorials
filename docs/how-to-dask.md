@@ -83,7 +83,7 @@ While this example is a bit complicated it shows how you can go from a matrix of
 In the {doc}`multi-gpu showcase notebook for rapids-singlecell <rapids-singlecell:notebooks/06-multi_gpu_show>`, {meth}`dask.array.Array.persist` appears across the notebook.
 This loads the entire dataset into memory while keeping the representation as a dask array.
 Thus, lazy computation still works but only necessitates a single read into memory.
-The catch is that you have enough memory to use `persist`.
+The catch is that you need to have enough memory to use `persist`, but if you do it greatly speeds up the computation.
 
 ### I'm out of memory, what now?
 
