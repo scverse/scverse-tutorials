@@ -11,6 +11,7 @@ from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
 from textwrap import dedent
+from time import sleep
 from typing import TYPE_CHECKING, Any, Literal
 
 import jsonschema
@@ -25,7 +26,7 @@ HERE = Path(__file__).absolute().parent
 
 
 @contextmanager
-def browser_context() -> Generator[any, None, None]:
+def _browser_context() -> Generator[Any, None, None]:
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         try:
@@ -37,11 +38,13 @@ def browser_context() -> Generator[any, None, None]:
 def _check_url_exists(url: str, browser) -> None:
     page = browser.new_page()
     try:
-        response = page.goto(url, timeout=10000)
+        response = page.request.head(url, timeout=10000)
         if response is None or response.status != 200:
             raise ValueError(f"URL {url} is not reachable (status: {response.status if response else 'unknown'})")
     finally:
         page.close()
+
+    sleep(5)
 
 
 def _check_image(img_path: Path) -> None:
@@ -69,7 +72,7 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict
     known_links = set()
     known_primary_to_orders: dict[str, set[int]] = {}
 
-    with browser_context() as browser:
+    with _browser_context() as browser:
         for tmp_meta_file in tutorials_dir.rglob("meta.yaml"):
             tutorial_id = tmp_meta_file.parent.name
             with tmp_meta_file.open() as f:
