@@ -7,10 +7,11 @@ import argparse
 import json
 import shutil
 import sys
+from collections.abc import Generator
 from contextlib import contextmanager
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING, Any, Generator, Literal
+from typing import TYPE_CHECKING, Any, Literal
 
 import jsonschema
 import yaml
@@ -22,6 +23,7 @@ if TYPE_CHECKING:
 
 HERE = Path(__file__).absolute().parent
 
+
 @contextmanager
 def browser_context() -> Generator[any, None, None]:
     with sync_playwright() as p:
@@ -31,6 +33,7 @@ def browser_context() -> Generator[any, None, None]:
         finally:
             browser.close()
 
+
 def _check_url_exists(url: str, browser) -> None:
     page = browser.new_page()
     try:
@@ -39,6 +42,7 @@ def _check_url_exists(url: str, browser) -> None:
             raise ValueError(f"URL {url} is not reachable (status: {response.status if response else 'unknown'})")
     finally:
         page.close()
+
 
 def _check_image(img_path: Path) -> None:
     """Check that the image exists and that it is either SVG or fits into the 512x512 bounding box."""
