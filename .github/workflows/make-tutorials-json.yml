@@ -31,6 +31,8 @@ jobs:
           cache: "pip" # caching pip dependencies
       - name: Install dependencies for validation script
         run: pip install .[registry]
+      - name: Install Playwright browser
+        run: playwright install chromium
       - name: Execute validation script and create output directory
         run: |
           ./tutorial-registry/validate.py --outdir=build

@@ -27,7 +27,7 @@ dev = ["pre-commit"]
 registry = [
     "jsonschema",
     "pillow",
-    "httpx",
+    "playwright",
     "pyyaml",
 ]
 docs = [
