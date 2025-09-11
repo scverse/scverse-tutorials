@@ -23,7 +23,10 @@ HERE = Path(__file__).absolute().parent
 
 
 def _check_url_exists(url: str) -> None:
-    response = httpx.get(url)
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    response = httpx.get(url, headers=headers)
     if response.status_code != 200:
         raise ValueError(f"URL {url} is not reachable (error {response.status_code}). ")
 
