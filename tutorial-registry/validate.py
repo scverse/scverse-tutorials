@@ -7,17 +7,14 @@ import argparse
 import json
 import shutil
 import sys
-from collections.abc import Generator
-from contextlib import contextmanager
 from pathlib import Path
 from textwrap import dedent
-from time import sleep
 from typing import TYPE_CHECKING, Any, Literal
 
+import httpx
 import jsonschema
 import yaml
 from PIL import Image
-from playwright.sync_api import sync_playwright
 
 if TYPE_CHECKING:
     from collections.abc import Generator, Iterable, Mapping
@@ -25,26 +22,10 @@ if TYPE_CHECKING:
 HERE = Path(__file__).absolute().parent
 
 
-@contextmanager
-def _browser_context() -> Generator[Any, None, None]:
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
-        try:
-            yield browser
-        finally:
-            browser.close()
-
-
-def _check_url_exists(url: str, browser) -> None:
-    page = browser.new_page()
-    try:
-        response = page.request.head(url, timeout=10000)
-        if response is None or response.status != 200:
-            raise ValueError(f"URL {url} is not reachable (status: {response.status if response else 'unknown'})")
-    finally:
-        page.close()
-
-    sleep(5)
+def _check_url_exists(url: str) -> None:
+    response = httpx.get(url)
+    if response.status_code != 200:
+        raise ValueError(f"URL {url} is not reachable (error {response.status_code}). ")
 
 
 def _check_image(img_path: Path) -> None:
@@ -72,43 +53,42 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict
     known_links = set()
     known_primary_to_orders: dict[str, set[int]] = {}
 
-    with _browser_context() as browser:
-        for tmp_meta_file in tutorials_dir.rglob("meta.yaml"):
-            tutorial_id = tmp_meta_file.parent.name
-            with tmp_meta_file.open() as f:
-                tmp_tutorial = yaml.load(f, yaml.SafeLoader)
+    for tmp_meta_file in tutorials_dir.rglob("meta.yaml"):
+        tutorial_id = tmp_meta_file.parent.name
+        with tmp_meta_file.open() as f:
+            tmp_tutorial = yaml.load(f, yaml.SafeLoader)
 
-            jsonschema.validate(tmp_tutorial, schema)
+        jsonschema.validate(tmp_tutorial, schema)
 
-            link = tmp_tutorial["link"]
-            if link in known_links:
-                raise ValueError(f"When validating {tmp_meta_file}: Duplicate link: {link}")
-            known_links.add(link)
+        link = tmp_tutorial["link"]
+        if link in known_links:
+            raise ValueError(f"When validating {tmp_meta_file}: Duplicate link: {link}")
+        known_links.add(link)
 
-            # Check for duplicate orders within the same primary category
-            primary_category = tmp_tutorial.get("primary_category")
-            order = tmp_tutorial.get("order")
+        # Check for duplicate orders within the same primary category
+        primary_category = tmp_tutorial.get("primary_category")
+        order = tmp_tutorial.get("order")
 
-            if primary_category and order is not None:
-                if primary_category not in known_primary_to_orders:
-                    known_primary_to_orders[primary_category] = set()
+        if primary_category and order is not None:
+            if primary_category not in known_primary_to_orders:
+                known_primary_to_orders[primary_category] = set()
 
-                if order in known_primary_to_orders[primary_category]:
-                    raise ValueError(
-                        f"When validating {tmp_meta_file}: Duplicate order {order} "
-                        f"for primary category '{primary_category}'"
-                    )
+            if order in known_primary_to_orders[primary_category]:
+                raise ValueError(
+                    f"When validating {tmp_meta_file}: Duplicate order {order} "
+                    f"for primary category '{primary_category}'"
+                )
 
-                known_primary_to_orders[primary_category].add(order)
+            known_primary_to_orders[primary_category].add(order)
 
-            _check_url_exists(link, browser)
+        _check_url_exists(link)
 
-            # replace image path by absolute local path to image
-            img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
-            _check_image(img_path)
-            tmp_tutorial["image"] = str(img_path)
+        # replace image path by absolute local path to image
+        img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
+        _check_image(img_path)
+        tmp_tutorial["image"] = str(img_path)
 
-            yield tmp_tutorial
+        yield tmp_tutorial
 
 
 def load_categories(categories_file: Path) -> dict[str, Any]:
