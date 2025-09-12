@@ -22,8 +22,11 @@ if TYPE_CHECKING:
 HERE = Path(__file__).absolute().parent
 
 
+HEADERS = {"User-Agent": "scverse tutorial registry (https://github.com/scverse/scverse-tutorials)"}
+
+
 def _check_url_exists(url: str) -> None:
-    response = httpx.get(url)
+    response = httpx.head(url, headers=HEADERS)
     if response.status_code != 200:
         raise ValueError(f"URL {url} is not reachable (error {response.status_code}). ")
 
