@@ -1,1 +1,274 @@
-{"created": 1757781985.026093, "duration": 0.014173030853271484, "exitcode": 5, "root": "/private/var/folders/22/fzs3nrw505z_m71cghqjc7j80000gn/T/nova-fix-uy1kqqsb/repo", "environment": {}, "summary": {"total": 0, "collected": 0}, "collectors": [{"nodeid": "", "outcome": "passed", "result": [{"nodeid": ".", "type": "Dir"}]}, {"nodeid": "docs/_static/css", "outcome": "passed", "result": []}, {"nodeid": "docs/_static", "outcome": "passed", "result": [{"nodeid": "docs/_static/css", "type": "Dir"}]}, {"nodeid": "docs/_templates/autosummary", "outcome": "passed", "result": []}, {"nodeid": "docs/_templates", "outcome": "passed", "result": [{"nodeid": "docs/_templates/autosummary", "type": "Dir"}]}, {"nodeid": "docs/extensions", "outcome": "passed", "result": []}, {"nodeid": "docs/notebooks/data", "outcome": "passed", "result": []}, {"nodeid": "docs/notebooks/img", "outcome": "passed", "result": []}, {"nodeid": "docs/notebooks", "outcome": "passed", "result": [{"nodeid": "docs/notebooks/data", "type": "Dir"}, {"nodeid": "docs/notebooks/img", "type": "Dir"}]}, {"nodeid": "docs", "outcome": "passed", "result": [{"nodeid": "docs/_static", "type": "Dir"}, {"nodeid": "docs/_templates", "type": "Dir"}, {"nodeid": "docs/extensions", "type": "Dir"}, {"nodeid": "docs/notebooks", "type": "Dir"}]}, {"nodeid": "tutorial-registry/tutorials/ATAC-preprocessing", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/CITEseq-integration", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/Joint-analysis-of-multiomic-data-with-MultiVI", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/RNA-velocity", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/advanced-plotting", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/anndata-getting-started", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/anndata-mudata-axes", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/bentotools-subcellular-resolution", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/cellcharter-spatial-transcriptomics", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/compositional-analysis", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/concatenation-of-multimodal-data", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/concatenation-of-unimodal-data", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/decoupler-pseudobulk-de", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/interoperability", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/perturbation-modeling", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/plotting-in-scanpy", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/preprocessing-and-clustering", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/pseudotemporal-ordering", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/scirpy-tcr", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/scverse-objects-in-backed-mode", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/scvi-batch-effect-removal", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials/squidpy-spatial", "outcome": "passed", "result": []}, {"nodeid": "tutorial-registry/tutorials", "outcome": "passed", "result": [{"nodeid": "tutorial-registry/tutorials/ATAC-preprocessing", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/CITEseq-integration", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/Joint-analysis-of-multiomic-data-with-MultiVI", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/RNA-velocity", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/advanced-plotting", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/anndata-getting-started", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/anndata-mudata-axes", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/bentotools-subcellular-resolution", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/cellcharter-spatial-transcriptomics", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/compositional-analysis", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/concatenation-of-multimodal-data", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/concatenation-of-unimodal-data", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/decoupler-pseudobulk-de", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/interoperability", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/perturbation-modeling", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/plotting-in-scanpy", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/preprocessing-and-clustering", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/pseudotemporal-ordering", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/scirpy-tcr", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/scverse-objects-in-backed-mode", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/scvi-batch-effect-removal", "type": "Dir"}, {"nodeid": "tutorial-registry/tutorials/squidpy-spatial", "type": "Dir"}]}, {"nodeid": "tutorial-registry", "outcome": "passed", "result": [{"nodeid": "tutorial-registry/tutorials", "type": "Dir"}]}, {"nodeid": ".", "outcome": "passed", "result": [{"nodeid": "docs", "type": "Dir"}, {"nodeid": "tutorial-registry", "type": "Dir"}]}], "tests": []}
+{
+    "created": 1757781985.026093,
+    "duration": 0.014173030853271484,
+    "exitcode": 5,
+    "root": "/private/var/folders/22/fzs3nrw505z_m71cghqjc7j80000gn/T/nova-fix-uy1kqqsb/repo",
+    "environment": {},
+    "summary": { "total": 0, "collected": 0 },
+    "collectors": [
+        {
+            "nodeid": "",
+            "outcome": "passed",
+            "result": [{ "nodeid": ".", "type": "Dir" }]
+        },
+        { "nodeid": "docs/_static/css", "outcome": "passed", "result": [] },
+        {
+            "nodeid": "docs/_static",
+            "outcome": "passed",
+            "result": [{ "nodeid": "docs/_static/css", "type": "Dir" }]
+        },
+        {
+            "nodeid": "docs/_templates/autosummary",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "docs/_templates",
+            "outcome": "passed",
+            "result": [
+                { "nodeid": "docs/_templates/autosummary", "type": "Dir" }
+            ]
+        },
+        { "nodeid": "docs/extensions", "outcome": "passed", "result": [] },
+        { "nodeid": "docs/notebooks/data", "outcome": "passed", "result": [] },
+        { "nodeid": "docs/notebooks/img", "outcome": "passed", "result": [] },
+        {
+            "nodeid": "docs/notebooks",
+            "outcome": "passed",
+            "result": [
+                { "nodeid": "docs/notebooks/data", "type": "Dir" },
+                { "nodeid": "docs/notebooks/img", "type": "Dir" }
+            ]
+        },
+        {
+            "nodeid": "docs",
+            "outcome": "passed",
+            "result": [
+                { "nodeid": "docs/_static", "type": "Dir" },
+                { "nodeid": "docs/_templates", "type": "Dir" },
+                { "nodeid": "docs/extensions", "type": "Dir" },
+                { "nodeid": "docs/notebooks", "type": "Dir" }
+            ]
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/ATAC-preprocessing",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/CITEseq-integration",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/Joint-analysis-of-multiomic-data-with-MultiVI",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/RNA-velocity",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/advanced-plotting",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/anndata-getting-started",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/anndata-mudata-axes",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/bentotools-subcellular-resolution",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/cellcharter-spatial-transcriptomics",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/compositional-analysis",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/concatenation-of-multimodal-data",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/concatenation-of-unimodal-data",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/decoupler-pseudobulk-de",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/interoperability",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/perturbation-modeling",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/plotting-in-scanpy",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/preprocessing-and-clustering",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/pseudotemporal-ordering",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/scirpy-tcr",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/scverse-objects-in-backed-mode",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/scvi-batch-effect-removal",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials/squidpy-spatial",
+            "outcome": "passed",
+            "result": []
+        },
+        {
+            "nodeid": "tutorial-registry/tutorials",
+            "outcome": "passed",
+            "result": [
+                {
+                    "nodeid": "tutorial-registry/tutorials/ATAC-preprocessing",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/CITEseq-integration",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/Joint-analysis-of-multiomic-data-with-MultiVI",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/RNA-velocity",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/advanced-plotting",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/anndata-getting-started",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/anndata-mudata-axes",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/bentotools-subcellular-resolution",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/cellcharter-spatial-transcriptomics",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/compositional-analysis",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/concatenation-of-multimodal-data",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/concatenation-of-unimodal-data",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/decoupler-pseudobulk-de",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/interoperability",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/perturbation-modeling",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/plotting-in-scanpy",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/preprocessing-and-clustering",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/pseudotemporal-ordering",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/scirpy-tcr",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/scverse-objects-in-backed-mode",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/scvi-batch-effect-removal",
+                    "type": "Dir"
+                },
+                {
+                    "nodeid": "tutorial-registry/tutorials/squidpy-spatial",
+                    "type": "Dir"
+                }
+            ]
+        },
+        {
+            "nodeid": "tutorial-registry",
+            "outcome": "passed",
+            "result": [
+                { "nodeid": "tutorial-registry/tutorials", "type": "Dir" }
+            ]
+        },
+        {
+            "nodeid": ".",
+            "outcome": "passed",
+            "result": [
+                { "nodeid": "docs", "type": "Dir" },
+                { "nodeid": "tutorial-registry", "type": "Dir" }
+            ]
+        }
+    ],
+    "tests": []
+}
