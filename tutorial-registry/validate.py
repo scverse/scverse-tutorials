@@ -89,7 +89,7 @@ async def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> ValuesVi
         tmp_tutorial["image"] = str(img_path)
 
     headers = {"User-Agent": "scverse tutorial registry (https://github.com/scverse/scverse-tutorials)"}
-    async with httpx.AsyncClient(headers=headers) as client, asyncio.TaskGroup() as tg:
+    async with httpx.AsyncClient(headers=headers, http2=True) as client, asyncio.TaskGroup() as tg:
         for link, tutorial in known_links.items():
             tg.create_task(_check_url_exists(client, link), name=tutorial["name"])
 
