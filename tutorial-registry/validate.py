@@ -4,12 +4,13 @@
 from __future__ import annotations
 
 import argparse
+import asyncio
 import json
 import shutil
 import sys
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING, Any, Literal
+from typing import TYPE_CHECKING, Any, Literal, cast
 
 import httpx
 import jsonschema
@@ -17,16 +18,15 @@ import yaml
 from PIL import Image
 
 if TYPE_CHECKING:
-    from collections.abc import Generator, Iterable, Mapping
+    from collections.abc import Iterable, Mapping, ValuesView
+
+    Tutorial = Mapping[str, str | Iterable[str]]
 
 HERE = Path(__file__).absolute().parent
 
 
-HEADERS = {"User-Agent": "scverse tutorial registry (https://github.com/scverse/scverse-tutorials)"}
-
-
-def _check_url_exists(url: str) -> None:
-    response = httpx.head(url, headers=HEADERS)
+async def _check_url_exists(client: httpx.AsyncClient, url: str) -> None:
+    response = await client.head(url)
     if response.status_code != 200:
         raise ValueError(f"URL {url} is not reachable (error {response.status_code}). ")
 
@@ -50,23 +50,22 @@ def _check_image(img_path: Path) -> None:
         )
 
 
-def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict, None, None]:
+async def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> ValuesView[Tutorial]:
     """Find all tutorial `meta.yaml` files in the tutorials dir and yield tutorial records."""
     schema = json.loads(schema_file.read_bytes())
-    known_links = set()
+    known_links: dict[str, Tutorial] = {}
     known_primary_to_orders: dict[str, set[int]] = {}
 
     for tmp_meta_file in tutorials_dir.rglob("meta.yaml"):
         tutorial_id = tmp_meta_file.parent.name
         with tmp_meta_file.open() as f:
-            tmp_tutorial = yaml.load(f, yaml.SafeLoader)
+            tmp_tutorial = cast("Tutorial", yaml.load(f, yaml.SafeLoader))
 
         jsonschema.validate(tmp_tutorial, schema)
 
-        link = tmp_tutorial["link"]
-        if link in known_links:
+        if (link := tmp_tutorial["link"]) in known_links:
             raise ValueError(f"When validating {tmp_meta_file}: Duplicate link: {link}")
-        known_links.add(link)
+        known_links[link] = tmp_tutorial
 
         # Check for duplicate orders within the same primary category
         primary_category = tmp_tutorial.get("primary_category")
@@ -84,14 +83,17 @@ def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict
 
             known_primary_to_orders[primary_category].add(order)
 
-        _check_url_exists(link)
-
         # replace image path by absolute local path to image
         img_path = tutorials_dir / tutorial_id / tmp_tutorial["image"]
         _check_image(img_path)
         tmp_tutorial["image"] = str(img_path)
 
-        yield tmp_tutorial
+    headers = {"User-Agent": "scverse tutorial registry (https://github.com/scverse/scverse-tutorials)"}
+    async with httpx.AsyncClient(headers=headers) as client, asyncio.TaskGroup() as tg:
+        for link in known_links:
+            tg.create_task(_check_url_exists(client, link))
+
+    return known_links.values()
 
 
 def load_categories(categories_file: Path) -> dict[str, Any]:
@@ -102,7 +104,7 @@ def load_categories(categories_file: Path) -> dict[str, Any]:
 
 def make_output(
     categories: Iterable[Mapping[str, Mapping[Literal["description"], str]]],
-    tutorials: Iterable[Mapping[str, str | Iterable[str]]],
+    tutorials: Iterable[Tutorial],
     *,
     outdir: Path | None = None,
 ) -> None:
@@ -138,9 +140,9 @@ def make_output(
         json.dump(result, sys.stdout, indent=2)
 
 
-def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Path | None = None):
+def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Path | None = None) -> None:
     """Validate and create output directory."""
-    tutorials = list(validate_tutorials(schema_file, meta_dir))
+    tutorials = asyncio.run(validate_tutorials(schema_file, meta_dir))
     categories = load_categories(categories_file)
     make_output(categories, tutorials, outdir=outdir)
 
