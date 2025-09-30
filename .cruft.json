@@ -19,6 +19,7 @@
         "docs/_templates/autosummary/**.rst"
       ],
       "_exclude_on_template_update": [
+        ".github/ISSUE_TEMPLATE/**",
         "CHANGELOG.md",
         "LICENSE",
         "README.md",
