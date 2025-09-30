@@ -1,25 +1,22 @@
-# Caches
-/.*cache/
-/node_modules/
-/data/
-.ipynb_checkpoints/
-__pycache__/
-
 # Temp files
 .DS_Store
 *~
+buck-out/
 
-# Virtual environments
+# Compiled files
 .venv/
+__pycache__/
+.ipynb_checkpoints/
+.*cache/
 
-# Build artifacts
+# Distribution / packaging
 /dist/
+
+# Tests and coverage
+/data/
+/node_modules/
+/.coverage*
+
+# docs
 /docs/generated/
 /docs/_build/
-
-# User configuration
-/hatch.toml
-
-# IDEs
-/.idea/
-/.vscode/

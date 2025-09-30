@@ -83,6 +83,6 @@ jobs:
             jcache notebook merge $f $f
           done
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Render notebooks

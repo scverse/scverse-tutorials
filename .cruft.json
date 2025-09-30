@@ -1,7 +1,7 @@
 {
   "template": "https://github.com/scverse/cookiecutter-scverse",
-  "commit": "87a407a65408d75a949c0b54b19fd287475a56f8",
-  "checkout": "v0.4.0",
+  "commit": "d383d94fadff9e4e6fdb59d77c68cb900d7cedec",
+  "checkout": "v0.6.0",
   "context": {
     "cookiecutter": {
       "project_name": "scverse-tutorials",
@@ -10,19 +10,32 @@
       "author_full_name": "scverse team",
       "author_email": "core-team@scverse.org",
       "github_user": "scverse",
-      "project_repo": "https://github.com/scverse/scverse-tutorials",
+      "github_repo": "scverse-tutorials",
       "license": "BSD 3-Clause License",
+      "ide_integration": true,
       "_copy_without_render": [
         ".github/workflows/build.yaml",
         ".github/workflows/test.yaml",
         "docs/_templates/autosummary/**.rst"
+      ],
+      "_exclude_on_template_update": [
+        ".github/ISSUE_TEMPLATE/**",
+        "environment.yml",
+        "*.md",
+        "src/**",
+        "docs/*.md",
+        "docs/notebooks/**",
+        "docs/references.bib",
+        "tests/**",
+        "tutorial-registry/**"
       ],
       "_render_devdocs": false,
       "_jinja2_env_vars": {
         "lstrip_blocks": true,
         "trim_blocks": true
       },
-      "_template": "https://github.com/scverse/cookiecutter-scverse"
+      "_template": "https://github.com/scverse/cookiecutter-scverse",
+      "_commit": "d383d94fadff9e4e6fdb59d77c68cb900d7cedec"
     }
   },
   "directory": null

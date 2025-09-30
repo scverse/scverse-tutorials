@@ -35,7 +35,7 @@ nitpicky = True  # Warn about broken links
 needs_sphinx = "4.0"
 
 html_context = {
-    "display_github": True,
+    "display_github": True,  # Integrate GitHub
     "github_user": "scverse",
     "github_repo": project_name,
     "github_version": "main",
@@ -56,6 +56,7 @@ extensions = [
     "sphinx_issues",
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
+    "sphinx_tabs.tabs",
     "sphinx.ext.mathjax",
     "IPython.sphinxext.ipython_console_highlighting",
     "sphinxext.opengraph",
@@ -85,7 +86,11 @@ nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
-source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".ipynb": "myst-nb",
+    ".myst": "myst-nb",
+}
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
@@ -117,14 +122,9 @@ html_title = project_name
 
 html_theme_options = {
     "repository_url": repository_url,
-    "repository_branch": "main",
+    "use_repository_button": True,
     "path_to_docs": "docs/",
     "navigation_with_keys": False,
-    "use_repository_button": True,
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        # "colab_url": "https://colab.research.google.com",
-    },
 }
 
 pygments_style = "default"
