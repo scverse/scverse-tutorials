@@ -113,12 +113,12 @@ lint.pydocstyle.convention = "numpy"
 
 [tool.cruft]
 skip = [
-  "tests",
-  "src/**/__init__.py",
-  "src/**/basic.py",
-  "docs/api.md",
-  "docs/changelog.md",
+  ".github/ISSUE_TEMPLATE",
+  "*.md",
+  "src",
+  "docs/*.md",
+  "docs/notebooks",
   "docs/references.bib",
-  "docs/references.md",
-  "docs/notebooks/example.ipynb",
+  "tests",
+  "tutorial-registry",
 ]
