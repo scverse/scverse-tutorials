@@ -5,9 +5,9 @@ requires = [ "hatchling" ]
 [project]
 name = "scverse-tutorials"
 version = "0.0.1"
-description = "Tutorials for single-cell analysis with scverse packages"
+description = "A very interesting piece of code"
 readme = "README.md"
-license = "BSD-3-Clause"
+license = { file = "LICENSE" }
 maintainers = [
   { name = "scverse team", email = "core-team@scverse.org" },
 ]
@@ -27,52 +27,65 @@ dependencies = [
   # for debug logging (referenced from the issue template)
   "session-info2",
 ]
-optional-dependencies.dev = [ "pre-commit" ]
-optional-dependencies.docs = [
-  "ipykernel",                # For notebooks
+optional-dependencies.dev = [
+  "pre-commit",
+  "twine>=4.0.2",
+]
+optional-dependencies.doc = [
+  "docutils>=0.8,!=0.18.*,!=0.19.*",
+  "ipykernel",
   "ipython",
   "myst-nb>=1.1",
-  "sphinx>=7",
+  "pandas",
+  # Until pybtex >0.24.0 releases: https://bitbucket.org/pybtex-devs/pybtex/issues/169/
+  "setuptools",
+  "sphinx>=8.1",
   "sphinx-autodoc-typehints",
-  "sphinx-book-theme>=1.1",
+  "sphinx-book-theme>=1",
   "sphinx-copybutton",
+  "sphinx-tabs",
   "sphinxcontrib-bibtex>=1",
   "sphinxext-opengraph",
 ]
-optional-dependencies.registry = [
-  "httpx",
-  "jsonschema",
-  "pillow",
-  "pyyaml",
+optional-dependencies.test = [
+  "coverage>=7.10",
+  "pytest",
+  "pytest-cov",     # For VS Code’s coverage functionality
 ]
-
 # https://docs.pypi.org/project_metadata/#project-urls
 urls.Documentation = "https://scverse-tutorials.readthedocs.io/"
 urls.Homepage = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 
-[tool.hatch.build.targets.wheel]
-bypass-selection = true # This is not a package
-
 [tool.hatch.envs.default]
 installer = "uv"
 features = [ "dev" ]
 
-[tool.hatch.envs.registry]
-features = [ "registry" ]
-[tool.hatch.envs.registry.scripts]
-validate = "python tutorial-registry/validate.py {args}"
-
 [tool.hatch.envs.docs]
-features = [ "docs" ]
-extra-dependencies = [
-  "setuptools", # undeclared dependency in pybtex
-  # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
-  "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
-]
-scripts.build = "sphinx-build -M html docs docs/_build {args}"
+features = [ "doc" ]
+scripts.build = "sphinx-build -M html docs docs/_build -W {args}"
 scripts.open = "python -m webbrowser -t docs/_build/html/index.html"
 scripts.clean = "git clean -fdX -- {args:docs}"
+
+# Test the lowest and highest supported Python versions with normal deps
+[[tool.hatch.envs.hatch-test.matrix]]
+deps = [ "stable" ]
+python = [ "3.10", "3.13" ]
+
+# Test the newest supported Python version also with pre-release deps
+[[tool.hatch.envs.hatch-test.matrix]]
+deps = [ "pre" ]
+python = [ "3.13" ]
+
+[tool.hatch.envs.hatch-test]
+features = [ "dev", "test" ]
+
+[tool.hatch.envs.hatch-test.overrides]
+# If the matrix variable `deps` is set to "pre",
+# set the environment variable `UV_PRERELEASE` to "allow".
+matrix.deps.env-vars = [
+  { key = "UV_PRERELEASE", value = "allow", if = [ "pre" ] },
+]
 
 [tool.ruff]
 line-length = 120
@@ -110,14 +123,23 @@ lint.ignore = [
   "E741", # allow I, O, l as variable names -> I is the identity matrix
 ]
 lint.per-file-ignores."*/__init__.py" = [ "F401" ]
-lint.per-file-ignores."docs/*" = [
-  "B018", # Trailing expressions in notebooks are not “useless”
-  "D103", # No need for docstrings in functions, we use literate programming
-  "E402", # Imports in non-top cells are fine
-]
+lint.per-file-ignores."docs/*" = [ "I" ]
 lint.per-file-ignores."tests/*" = [ "D" ]
-
 lint.pydocstyle.convention = "numpy"
+
+[tool.pytest.ini_options]
+testpaths = [ "tests" ]
+xfail_strict = true
+addopts = [
+  "--import-mode=importlib", # allow using test files with same name
+]
+
+[tool.coverage.run]
+source = [ "scverse_tutorials" ]
+patch = [ "subprocess" ]
+omit = [
+  "**/test_*.py",
+]
 
 [tool.cruft]
 skip = [

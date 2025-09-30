@@ -55,6 +55,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
+    "sphinx_tabs.tabs",
     "sphinx.ext.mathjax",
     "IPython.sphinxext.ipython_console_highlighting",
     "sphinxext.opengraph",
@@ -84,7 +85,11 @@ nb_execution_mode = "off"
 nb_merge_streams = True
 typehints_defaults = "braces"
 
-source_suffix = {".rst": "restructuredtext", ".ipynb": "myst-nb", ".myst": "myst-nb"}
+source_suffix = {
+    ".rst": "restructuredtext",
+    ".ipynb": "myst-nb",
+    ".myst": "myst-nb",
+}
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
@@ -96,13 +101,7 @@ intersphinx_mapping = {
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [
-    "_build",
-    "Thumbs.db",
-    ".DS_Store",
-    "**.ipynb_checkpoints",
-    ".jupyter_cache",
-]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -118,14 +117,9 @@ html_title = project_name
 
 html_theme_options = {
     "repository_url": repository_url,
-    "repository_branch": "main",
+    "use_repository_button": True,
     "path_to_docs": "docs/",
     "navigation_with_keys": False,
-    "use_repository_button": True,
-    "launch_buttons": {
-        "binderhub_url": "https://mybinder.org",
-        # "colab_url": "https://colab.research.google.com",
-    },
 }
 
 pygments_style = "default"
