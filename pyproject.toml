@@ -88,6 +88,8 @@ select = [
     "RUF100",  # Report unused noqa directives
 ]
 ignore = [
+    # dict() syntax is fine
+    "C408",
     # line too long -> we accept long comment lines; formatter gets rid of long code lines
     "E501",
     # Do not assign a lambda expression, use a def -> lambda expression assignments are convenient
