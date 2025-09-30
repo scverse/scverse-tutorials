@@ -92,6 +92,7 @@ lint.select = [
 ]
 lint.ignore = [
   "B008", # Errors from function calls in argument defaults. These are fine when the result is immutable.
+  "C408", # dict() is nice for some use cases
   "D100", # Missing docstring in public module
   "D104", # Missing docstring in public package
   "D105", # __magic__ methods are often self-explanatory, allow missing docstrings
