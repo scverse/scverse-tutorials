@@ -38,13 +38,15 @@ optional-dependencies.docs = [
   "sphinxcontrib-bibtex>=1",
   "sphinxext-opengraph",
 ]
-
 optional-dependencies.registry = [
   "httpx",
   "jsonschema",
   "pillow",
   "pyyaml",
 ]
+urls.Documentation = "https://scverse.org/scverse-tutorials"
+urls.Home-page = "https://github.com/scverse/scverse-tutorials"
+urls.Source = "https://github.com/scverse/scverse-tutorials"
 
 [tool.hatch.envs.default]
 installer = "uv"
