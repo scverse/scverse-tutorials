@@ -1,0 +1,17 @@
+name: Concatenation
+description: |
+  In this notebook we showcase how to perform concatenation, meaning to
+  keep all sub elements of each object, and stack these elements in an
+  ordered way.
+link: https://anndata.readthedocs.io/en/latest/concatenation.html
+image: icon.png
+primary_category: Data structures
+order: 30
+tags:
+  - concatenation
+packages:
+  - anndata
+  - scanpy
+  - scipy
+authors:
+  - ivirshup

@@ -1,0 +1,15 @@
+name: Spatial analysis with squidpy
+description: |
+  This tutorial demonstrate how to use squidpy to analyse transcriptomics
+  data with spatial resolution.
+link: https://squidpy.readthedocs.io/en/latest/notebooks/tutorials/tutorial_vizgen_mouse_liver.html
+image: icon.png
+primary_category: Spatial
+order: 10
+tags:
+  - preprocessing
+  - visualization
+packages:
+  - squidpy
+authors:
+  - giovp

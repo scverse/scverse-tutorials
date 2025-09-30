@@ -14,20 +14,5 @@
             "console": "internalConsole",
             "justMyCode": false,
         },
-        {
-            "name": "Python: Debug Test",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${file}",
-            "purpose": ["debug-test"],
-            "console": "internalConsole",
-            "justMyCode": false,
-            "env": {
-                "PYTEST_ADDOPTS": "--color=yes",
-            },
-            "presentation": {
-                "hidden": true,
-            },
-        },
     ],
 }
