@@ -5,9 +5,9 @@ requires = [ "hatchling" ]
 [project]
 name = "scverse-tutorials"
 version = "0.0.1"
-description = "A very interesting piece of code"
+description = "Tutorials for single-cell analysis with scverse packages"
 readme = "README.md"
-license = { file = "LICENSE" }
+license = "BSD-3-Clause"
 maintainers = [
   { name = "scverse team", email = "core-team@scverse.org" },
 ]
@@ -16,24 +16,33 @@ authors = [
 ]
 requires-python = ">=3.10"
 classifiers = [
+  "Private :: Do Not Upload",                    # Prevent uploading to PyPI
   "Programming Language :: Python :: 3 :: Only",
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
 ]
-docs = [
-  "sphinx>=7",
-  "sphinx-book-theme>=1.1.0",
-  "sphinx-issues>=5.0.1",
-  "myst-nb>=1.1.0",
-  "sphinxcontrib-bibtex>=1.0.0",
-  "sphinx-autodoc-typehints",
-  "sphinxext-opengraph",
+optional-dependencies.dev = [ "pre-commit" ]
+optional-dependencies.docs = [
   # For notebooks
   "ipykernel",
   "ipython",
+  "myst-nb>=1.1",
+  "sphinx>=7",
+  "sphinx-autodoc-typehints",
+  "sphinx-book-theme>=1.1",
   "sphinx-copybutton",
+  "sphinx-issues>=5.0.1",
+  "sphinxcontrib-bibtex>=1",
+  "sphinxext-opengraph",
+]
+
+optional-dependencies.registry = [
+  "httpx",
+  "jsonschema",
+  "pillow",
+  "pyyaml",
 ]
 
 [tool.hatch.envs.default]
@@ -52,10 +61,9 @@ extra-dependencies = [
   # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
   "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
 ]
-[tool.hatch.envs.docs.scripts]
-build = "sphinx-build -M html docs docs/_build {args}"
-open = "python3 -m webbrowser -t docs/_build/html/index.html"
-clean = "git clean -fdX -- {args:docs}"
+scripts.build = "sphinx-build -M html docs docs/_build {args}"
+scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
+scripts.clean = "git clean -fdX -- {args:docs}"
 
 [tool.hatch.build.targets.wheel]
 bypass-selection = true # This is not a package
@@ -95,22 +103,12 @@ lint.ignore = [
   "E731", # Do not assign a lambda expression, use a def -> lambda expression assignments are convenient
   "E741", # allow I, O, l as variable names -> I is the identity matrix
 ]
-lint.per-file-ignores."docs/**" = [ "D103", "I" ]
+lint.per-file-ignores."docs/**" = [
+  "B018", # Trailing expressions in notebooks are not “useless”
+  "D103", # No need for docstrings in functions, we use literate programming
+  "E402", # Imports in non-top cells are fine
+]
 lint.pydocstyle.convention = "numpy"
-
-[tool.pytest.ini_options]
-testpaths = [ "tests" ]
-xfail_strict = true
-addopts = [
-  "--import-mode=importlib", # allow using test files with same name
-]
-
-[tool.coverage.run]
-source = [ "scverse_tutorials" ]
-patch = [ "subprocess" ]
-omit = [
-  "**/test_*.py",
-]
 
 [tool.cruft]
 skip = [
