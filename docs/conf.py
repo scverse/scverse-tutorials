@@ -53,6 +53,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
+    "sphinx_issues",
     "sphinxcontrib.bibtex",
     "sphinx_autodoc_typehints",
     "sphinx_tabs.tabs",
@@ -93,9 +94,13 @@ source_suffix = {
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
-    "anndata": ("https://anndata.readthedocs.io/en/stable/", None),
-    "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "anndata": ("https://anndata.readthedocs.io/en/latest/", None),  # TODO: change back to stable after 0.12 release
     "numpy": ("https://numpy.org/doc/stable/", None),
+    "scanpy": ("https://scanpy.readthedocs.io/en/stable/", None),
+    "fast-array-utils": ("https://icb-fast-array-utils.readthedocs-hosted.com/en/stable", None),
+    "dask": ("https://docs.dask.org/en/stable", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy", None),
+    "rapids-singlecell": ("https://rapids-singlecell.readthedocs.io/en/stable/", None),
 }
 
 # List of patterns, relative to source directory, that match files and

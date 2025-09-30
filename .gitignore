@@ -6,6 +6,7 @@ buck-out/
 # Compiled files
 .venv/
 __pycache__/
+.ipynb_checkpoints/
 .*cache/
 
 # Distribution / packaging
