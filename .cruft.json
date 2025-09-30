@@ -20,6 +20,7 @@
       ],
       "_exclude_on_template_update": [
         ".github/ISSUE_TEMPLATE/**",
+        "environment.yml",
         "*.md",
         "src/**",
         "docs/*.md",

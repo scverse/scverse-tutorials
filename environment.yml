@@ -1,0 +1,25 @@
+# declare dependencies for binder and for executing notebooks on CI
+name: tutorials
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - jupyter-cache
+  - ipykernel
+  - ipython
+  - jupyterlab-myst
+  - jupytext
+  - pip>=24.2
+  - pip:
+      - scanpy>=1.10
+      - scrublet
+      - leidenalg
+      # We need this commit: https://github.com/saezlab/decoupler-py/commit/0b3d9a975e06230ebbc32a6f97810be1730b8562
+      - decoupler @ git+https://github.com/saezlab/decoupler-py.git
+      - celltypist
+      - seaborn
+      - mudata
+      - muon
+      - mudatasets
+      - omnipath
+      - pooch

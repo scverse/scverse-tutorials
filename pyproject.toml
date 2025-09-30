@@ -114,6 +114,7 @@ lint.pydocstyle.convention = "numpy"
 [tool.cruft]
 skip = [
   ".github/ISSUE_TEMPLATE",
+  "environment.yml",
   "*.md",
   "src",
   "docs/*.md",
