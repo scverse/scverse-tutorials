@@ -54,8 +54,7 @@ features = [ "dev" ]
 
 [tool.hatch.envs.registry]
 features = [ "registry" ]
-[tool.hatch.envs.registry.scripts]
-validate = "python tutorial-registry/validate.py {args}"
+scripts.validate = "python tutorial-registry/validate.py {args}"
 
 [tool.hatch.envs.docs]
 features = [ "docs" ]
