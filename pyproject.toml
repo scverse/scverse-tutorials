@@ -8,19 +8,12 @@ version = "0.0.1"
 description = "Tutorials for single-cell analysis with scverse packages"
 readme = "README.md"
 license = "BSD-3-Clause"
-maintainers = [
-  { name = "scverse team", email = "core-team@scverse.org" },
-]
-authors = [
-  { name = "scverse team" },
-]
-requires-python = ">=3.10"
+maintainers = [ { name = "scverse team", email = "core-team@scverse.org" } ]
+authors = [ { name = "scverse team" } ]
+requires-python = ">=3.13"
 classifiers = [
   "Private :: Do Not Upload",                    # Prevent uploading to PyPI
   "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
@@ -39,12 +32,7 @@ optional-dependencies.docs = [
   "sphinxcontrib-bibtex>=1",
   "sphinxext-opengraph",
 ]
-optional-dependencies.registry = [
-  "httpx",
-  "jsonschema",
-  "pillow",
-  "pyyaml",
-]
+optional-dependencies.registry = [ "httpx", "jsonschema", "pillow", "pyyaml" ]
 urls.Documentation = "https://scverse.org/scverse-tutorials"
 urls.Home-page = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
