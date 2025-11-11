@@ -1,16 +1,18 @@
-name: Pseudo-bulk differential expression and functional analysis
+name: Pseudobulk and differential expression analysis
 description: |
-  This notebook showcases decoupler for pathway and TF enrichment on ~5k
-  Blood myeloid cells from healthy and COVID-19 infected patients.
-link: https://decoupler-py.readthedocs.io/en/latest/notebooks/pseudobulk.html
+  This notebook showcases decoupler and PyDESeq2 for creating pseudobulk samples
+  and performing differential expression analysis on ~5k Blood myeloid cells from
+  healthy and COVID-19 infected patients.
+link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorials_pseudobulk_DEA.ipynb
 image: icon.png
 primary_category: scRNA-seq
 order: 30
 tags:
+  - pseudo-bulk
   - differential expression
-  - functional analysis
 packages:
-  - decoupler
   - scanpy
+  - decoupler
+  - pydeseq2
 authors:
   - PauBadiaM
