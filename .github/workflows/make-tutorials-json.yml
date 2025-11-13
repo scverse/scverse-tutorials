@@ -27,8 +27,6 @@ jobs:
 
       - name: Install uv
         uses: astral-sh/setup-uv@v7
-        with:
-          cache-dependency-glob: pyproject.toml
       - name: Execute validation script and create output directory
         run: |
           uvx hatch run registry:validate --outdir build
