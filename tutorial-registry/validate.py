@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import logging
 import shutil
 import sys
 from pathlib import Path
@@ -16,6 +17,8 @@ import jsonschema
 import yaml
 from PIL import Image
 
+logger = logging.getLogger(__name__)
+
 if TYPE_CHECKING:
     from collections.abc import Generator, Iterable, Mapping
 
@@ -23,7 +26,8 @@ HERE = Path(__file__).absolute().parent
 
 
 def _check_url_exists(url: str) -> None:
-    response = httpx.get(url)
+    logger.info(f"Testing URL: {url}")
+    response = httpx.head(url, follow_redirects=True)
     if response.status_code != 200:
         raise ValueError(f"URL {url} is not reachable (error {response.status_code}). ")
 
@@ -47,7 +51,7 @@ def _check_image(img_path: Path) -> None:
         )
 
 
-def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict, None, None]:
+def validate_tutorials(schema_file: Path, tutorials_dir: Path) -> Generator[dict]:
     """Find all tutorial `meta.yaml` files in the tutorials dir and yield tutorial records."""
     schema = json.loads(schema_file.read_bytes())
     known_links = set()
@@ -143,6 +147,8 @@ def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Pa
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
+
     parser = argparse.ArgumentParser(
         prog="validate.py",
         description="Validate tutorials' meta.yaml and generate an output directory with json/images to be uploaded on github pages.",
