@@ -21,14 +21,14 @@ jobs:
     permissions:
       contents: write # Allow GH actions to push changes to repo
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.head_ref }}
           filter: blob:none
           fetch-depth: 0
       - name: Cache conda
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           # Increase this value to reset cache if env file has not changed
           CACHE_NUMBER: 0
@@ -36,7 +36,7 @@ jobs:
           path: ~/conda_pkgs_dir
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
       - name: Cache notebooks
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         env:
           # Increase this value to reset cache if env file has not changed
           CACHE_NUMBER: 0
@@ -83,6 +83,6 @@ jobs:
             jcache notebook merge $f $f
           done
 
-      - uses: stefanzweifel/git-auto-commit-action@v5
+      - uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Render notebooks
