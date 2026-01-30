@@ -4,7 +4,9 @@
 buck-out/
 
 # Compiled files
-.venv/
+/.venv/
+/.pixi/*
+/pixi.*
 __pycache__/
 .ipynb_checkpoints/
 .*cache/
