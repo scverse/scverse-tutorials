@@ -36,13 +36,12 @@ urls.Documentation = "https://scverse.org/scverse-tutorials"
 urls.Home-page = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 
+[tool.hatch.build.targets.wheel]
+bypass-selection = true # This is not a package
+
 [tool.hatch.envs.default]
 installer = "uv"
 features = [ "dev" ]
-
-[tool.hatch.envs.registry]
-features = [ "registry" ]
-scripts.validate = "python tutorial-registry/validate.py {args}"
 
 [tool.hatch.envs.docs]
 features = [ "docs" ]
@@ -55,8 +54,9 @@ scripts.build = "sphinx-build -M html docs docs/_build {args}"
 scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
 scripts.clean = "git clean -fdX -- {args:docs}"
 
-[tool.hatch.build.targets.wheel]
-bypass-selection = true # This is not a package
+[tool.hatch.envs.registry]
+features = [ "registry" ]
+scripts.validate = "python tutorial-registry/validate.py {args}"
 
 [tool.ruff]
 line-length = 120
