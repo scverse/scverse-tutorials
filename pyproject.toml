@@ -36,35 +36,27 @@ urls.Documentation = "https://scverse.org/scverse-tutorials"
 urls.Home-page = "https://github.com/scverse/scverse-tutorials"
 urls.Source = "https://github.com/scverse/scverse-tutorials"
 
-[tool.hatch.build.targets.wheel]
-bypass-selection = true # This is not a package
-
-[tool.hatch.envs.default]
-installer = "uv"
-features = [ "dev" ]
-
-[tool.hatch.envs.docs]
-features = [ "docs" ]
-extra-dependencies = [
-  "setuptools", # undeclared dependency in pybtex
+[tool.hatch]
+build.targets.wheel.bypass-selection = true  # This is not a package
+envs.default.installer = "uv"
+envs.default.features = [ "dev" ]
+envs.docs.features = [ "docs" ]
+envs.docs.extra-dependencies = [
+  "setuptools",                                                              # undeclared dependency in pybtex
   # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
   "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
 ]
-scripts.build = "sphinx-build -M html docs docs/_build {args}"
-scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
-scripts.clean = "git clean -fdX -- {args:docs}"
-
-[tool.hatch.envs.registry]
-features = [ "registry" ]
-scripts.validate = "python tutorial-registry/validate.py {args}"
+envs.docs.scripts.build = "sphinx-build -M html docs docs/_build {args}"
+envs.docs.scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
+envs.docs.scripts.clean = "git clean -fdX -- {args:docs}"
+envs.registry.features = [ "registry" ]
+envs.registry.scripts.validate = "python tutorial-registry/validate.py {args}"
 
 [tool.ruff]
 line-length = 120
 src = [ "src" ]
 extend-include = [ "*.ipynb" ]
-
 format.docstring-code-format = true
-
 lint.select = [
   "B",      # flake8-bugbear
   "BLE",    # flake8-blind-except
