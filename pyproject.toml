@@ -42,7 +42,6 @@ envs.default.installer = "uv"
 envs.default.features = [ "dev" ]
 envs.docs.features = [ "docs" ]
 envs.docs.extra-dependencies = [
-  "setuptools",                                                              # undeclared dependency in pybtex
   # fix from here: https://github.com/executablebooks/MyST-NB/pull/597
   "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
 ]
