@@ -1,0 +1,18 @@
+name: GPU-accelerated single-cell analysis with rapids-singlecell
+description: |
+  This tutorial demonstrates a complete single-cell RNA-seq workflow on the GPU
+  using rapids-singlecell as a drop-in replacement for scanpy, covering
+  preprocessing, clustering, batch correction, and differential expression.
+link: https://rapids-singlecell.readthedocs.io/en/latest/notebooks/01_basic_workflow.html
+image: icon.svg
+primary_category: scRNA-seq
+order: 80
+tags:
+  - preprocessing
+  - quality control
+  - visualization
+  - differential expression
+packages:
+  - rapids-singlecell
+authors:
+  - Intron7
