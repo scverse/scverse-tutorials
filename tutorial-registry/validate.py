@@ -139,7 +139,7 @@ def make_output(
         json.dump(result, sys.stdout, indent=2)
 
 
-def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Path | None = None):
+def main(schema_file: Path, meta_dir: Path, categories_file: Path, *, outdir: Path | None = None) -> None:
     """Validate and create output directory."""
     tutorials = list(validate_tutorials(schema_file, meta_dir))
     categories = load_categories(categories_file)
