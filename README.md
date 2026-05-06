@@ -5,7 +5,7 @@
 On [scverse.org/learn](https://scverse.org/learn), we aim at providing a comprehensive overview of analyses that can be
 performed with scverse core and ecosystem packages.
 
-To this end, this repository contains
+To this end, this repository contains:
 
 - a registry for tutorials listed on [scverse.org/learn](https://scverse.org/learn) (see `tutorial-registry`)
 - shared tutorials that complement more specific tutorials provided by invidiual [core](https://scverse.org/packages/)
@@ -35,8 +35,7 @@ hatch run registry:validate  # for the tutorials registry
 
 ## Structure of external tutorials
 
-While we do not mandate a specific structure for tutorials,
-a good tutorial typically comprises the following sections:
+While we do not mandate a specific structure for tutorials, a good tutorial typically comprises the following sections:
 
 1. **General header**: The tutorial should have a general header that corresponds to the analysis.
 2. **Brief introduction**: The tutorial should introduce the package, the analysis motivation and potentially biological background.
