@@ -46,8 +46,8 @@ envs.docs.extra-dependencies = [
   "myst-nb @ git+https://github.com/flying-sheep/MyST-NB.git@eval-metadata",
 ]
 envs.docs.scripts.build = "sphinx-build -M html docs docs/_build {args}"
-envs.docs.scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
 envs.docs.scripts.clean = "git clean -fdX -- {args:docs}"
+envs.docs.scripts.open = "python3 -m webbrowser -t docs/_build/html/index.html"
 envs.registry.features = [ "registry" ]
 envs.registry.scripts.validate = "python tutorial-registry/validate.py {args}"
 
