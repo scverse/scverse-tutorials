@@ -1,0 +1,20 @@
+name: Single-cell multiome analysis with SnapATAC2
+description: |
+  Analyze paired ATAC and gene expression from a 10x multiome experiment in a joint embedding.
+link: https://snapatac2.scverse.org/tutorials/modality.html
+image: icon.svg
+primary_category: Multimodal
+order: 10
+modality:
+  - ATAC
+  - RNA
+tags:
+  - multimodal
+  - data integration
+  - preprocessing
+packages:
+  - snapatac2
+  - scanpy
+  - anndata
+authors:
+  - kaizhang
