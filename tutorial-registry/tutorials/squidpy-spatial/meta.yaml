@@ -1,14 +1,14 @@
-name: Spatial analysis at subcellular resolution
+name: Spatial analysis with squidpy
 description: |
-  Study gene expression at subcellular resolution with bento-tools.
-link: https://bento-tools.readthedocs.io/en/latest/index.html
+  Analyse transcriptomics data with spatial resolution using squidpy.
+link: https://squidpy.readthedocs.io/en/latest/notebooks/tutorials/tutorial_vizgen_mouse_liver.html
 image: icon.png
 primary_category: Spatial
-order: 30
+order: 10
 tags:
   - preprocessing
   - visualization
 packages:
-  - bento-tools
+  - squidpy
 authors:
-  - ckmah
+  - giovp
