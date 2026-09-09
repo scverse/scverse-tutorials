@@ -1,7 +1,6 @@
 name: Concatenation of multimodal data
 description: |
-  This tutorial shows how you can concatenate 2 MuData objects that may represent complementary
-  slices of the same dataset or 2 modalities into one AnnData.
+  Concatenate two MuData objects representing complementary slices of a dataset, or two modalities, into one AnnData.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/tutorial_concatenation_anndata_mudata.html
 image: icon.png
 primary_category: Data structures

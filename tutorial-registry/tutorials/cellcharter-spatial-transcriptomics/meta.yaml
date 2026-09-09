@@ -1,7 +1,6 @@
 name: Spatial clustering of spacial transcriptomics data with CellCharter
 description: |
-  This tutorial demonstrate how to use CellCharter to cluster spatial transcriptomics data, obtained with the CosMx technology from Nanostring.
-  This method can also be used for spatial proteomics data.
+  Cluster spatial transcriptomics data from Nanostring CosMx with CellCharter. Also works for spatial proteomics.
 link: https://cellcharter.readthedocs.io/en/latest/notebooks/cosmx_human_nsclc.html
 image: icon.png
 primary_category: Spatial

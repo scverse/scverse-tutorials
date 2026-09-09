@@ -1,8 +1,6 @@
 name: Perturbation modeling
 description: |
-  This tutorial covers 3 approaches using single-cell perturbation data:
-  Augur (identify affected cell types), scGen (predict transcriptional response),
-  Mixscape (quantify CRISPR sensitivity).
+  Augur to identify affected cell types, scGen to predict transcriptional response, Mixscape for CRISPR sensitivity.
 link: https://www.sc-best-practices.org/conditions/perturbation_modeling.html
 image: icon.png
 primary_category: scRNA-seq
