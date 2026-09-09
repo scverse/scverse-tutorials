@@ -1,0 +1,23 @@
+name: Analyze Xenium data with SpatialData and squidpy
+description: |
+  Read a Xenium dataset with spatialdata-io, then run quality control, clustering and spatial statistics with squidpy.
+link: https://squidpy.readthedocs.io/en/latest/notebooks/tutorials/tutorial_xenium.html
+image: icon.svg
+primary_category: Spatial
+order: 5
+modality:
+  - spatial
+  - RNA
+tags:
+  - quality control
+  - preprocessing
+  - visualization
+packages:
+  - squidpy
+  - spatialdata
+  - spatialdata-io
+  - scanpy
+  - anndata
+authors:
+  - LLehner
+  - giovp
