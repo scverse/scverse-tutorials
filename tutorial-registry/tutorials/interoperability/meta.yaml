@@ -1,7 +1,6 @@
 name: Interoperability
 description: |
-  This document lists resources for conversion to other data formats and programming
-  languages, e.g. R, Julia, ...
+  Resources for converting scverse data to other formats and languages, such as R and Julia.
 link: https://scverse-tutorials.readthedocs.io/en/latest/notebooks/scverse_data_interoperability.html
 image: icon.png
 primary_category: Tips & Tricks

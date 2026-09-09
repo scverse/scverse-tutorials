@@ -1,7 +1,6 @@
 name: Spatial analysis at subcellular resolution
 description: |
-  This tutorial shows how to use bentotools to study
-  gene expression at subcellular resolution.
+  Study gene expression at subcellular resolution with bento-tools.
 link: https://bento-tools.readthedocs.io/en/latest/index.html
 image: icon.png
 primary_category: Spatial

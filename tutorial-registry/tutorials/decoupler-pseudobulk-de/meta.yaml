@@ -1,7 +1,6 @@
 name: Pseudo-bulk differential expression and functional analysis
 description: |
-  This notebook showcases decoupler for pathway and TF enrichment on ~5k
-  Blood myeloid cells from healthy and COVID-19 infected patients.
+  Pathway and TF enrichment on ~5k blood myeloid cells from healthy and COVID-19 patients.
 link: https://decoupler.readthedocs.io/en/latest/notebooks/scell/rna_psbk.html
 image: icon.png
 primary_category: scRNA-seq

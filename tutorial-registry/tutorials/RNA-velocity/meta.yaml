@@ -1,7 +1,6 @@
 name: RNA velocity
 description: |
-  This tutorial guides you through how RNA velocity can be inferred from single cell RNA-seq data
-  using scVelo.
+  Infer RNA velocity from single-cell RNA-seq data with scVelo.
 link: https://scvelo.readthedocs.io/en/stable/getting_started.html
 image: icon.png
 primary_category: scRNA-seq

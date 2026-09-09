@@ -1,6 +1,6 @@
 name: Pseudotemporal ordering
 description: |
-  This tutorial show how a pseudotime can be constructed and compares different pseudotimes.
+  Construct a pseudotime and compare different pseudotimes.
 link: https://www.sc-best-practices.org/trajectories/pseudotemporal.html#
 image: icon.png
 primary_category: scRNA-seq
