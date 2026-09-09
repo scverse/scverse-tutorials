@@ -1,7 +1,6 @@
 name: Standard scATAC-seq pipeline with SnapATAC2
 description: |
-  End-to-end analysis of 5k PBMCs from fragment file to annotated clusters,
-  covering quality control, dimension reduction, clustering and annotation.
+  From fragment file to annotated clusters on 5k PBMCs: quality control, dimension reduction, clustering.
 link: https://snapatac2.scverse.org/tutorials/pbmc.html
 image: icon.svg
 primary_category: ATAC-seq

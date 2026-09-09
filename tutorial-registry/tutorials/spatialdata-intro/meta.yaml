@@ -1,7 +1,6 @@
 name: Introduction to SpatialData
 description: |
-  A tour of the SpatialData object: images, labels, points, shapes and
-  tables, how they are annotated and how coordinate systems tie them together.
+  A tour of the SpatialData object: images, labels, points, shapes, tables and coordinate systems.
 link: https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/intro.html
 image: icon.svg
 primary_category: Data structures

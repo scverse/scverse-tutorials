@@ -1,7 +1,6 @@
 name: Single-cell enrichment analysis
 description: |
-  Score transcription factor and pathway activities in individual cells with
-  decoupler, and compare the resulting activities across cell types.
+  Score transcription factor and pathway activities per cell, then compare them across cell types.
 link: https://decoupler.readthedocs.io/en/latest/notebooks/scell/rna_sc.html
 image: icon.png
 primary_category: scRNA-seq
