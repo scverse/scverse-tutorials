@@ -3,8 +3,8 @@ description: |
   Infer ligand-receptor interactions between cell types and aggregate the methods into a consensus ranking.
 link: https://liana-py.readthedocs.io/en/latest/notebooks/basic_usage.html
 image: icon.png
-primary_category: Cell-cell communication
-order: 10
+primary_category: scRNA-seq
+order: 120
 modality:
   - RNA
 tags:

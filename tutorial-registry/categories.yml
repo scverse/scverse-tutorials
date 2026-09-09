@@ -16,10 +16,6 @@
     description: |
       Tutorials for analyzing single-cell B-cell and T-cell receptor sequencing data
 
-- Cell-cell communication:
-    description: |
-      Infer and analyse interactions between cells
-
 - Surface proteins:
     description: |
       CITE-seq analyses
