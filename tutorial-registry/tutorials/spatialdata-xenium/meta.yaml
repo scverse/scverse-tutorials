@@ -1,0 +1,21 @@
+name: Reading Xenium data with SpatialData
+description: |
+  How to read a 10x Genomics Xenium experiment into a SpatialData object and
+  explore transcripts, cell boundaries and morphology images together.
+link: https://spatialdata.scverse.org/en/stable/tutorials/notebooks/notebooks/examples/technology_xenium.html
+image: icon.svg
+primary_category: Spatial
+order: 5
+modality:
+  - spatial
+  - RNA
+tags:
+  - data structures
+  - preprocessing
+  - visualization
+packages:
+  - spatialdata
+  - spatialdata-io
+authors:
+  - LucaMarconato
+  - giovp

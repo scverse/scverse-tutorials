@@ -1,0 +1,20 @@
+name: Perturbation spaces
+description: |
+  Summarize all cells of a perturbation into a single point to compare and
+  combine whole perturbations rather than individual cells.
+link: https://pertpy.readthedocs.io/en/latest/tutorials/notebooks/perturbation_space.html
+image: icon.svg
+primary_category: scRNA-seq
+order: 100
+modality:
+  - RNA
+tags:
+  - perturbation
+  - visualization
+packages:
+  - pertpy
+  - scanpy
+  - anndata
+authors:
+  - Lilly-May
+  - Zethson

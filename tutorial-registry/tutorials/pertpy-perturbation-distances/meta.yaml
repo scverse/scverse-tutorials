@@ -1,0 +1,21 @@
+name: Quantifying perturbation effects with distances
+description: |
+  Measure how strongly a perturbation shifts cells using pertpy's point-cloud
+  distance metrics, and test the shifts for significance with permutation tests.
+link: https://pertpy.readthedocs.io/en/latest/tutorials/notebooks/distances.html
+image: icon.svg
+primary_category: scRNA-seq
+order: 90
+modality:
+  - RNA
+tags:
+  - perturbation
+  - visualization
+packages:
+  - pertpy
+  - scanpy
+  - anndata
+authors:
+  - stefanpeidli
+  - Lilly-May
+  - Zethson

@@ -1,0 +1,20 @@
+name: Perturbation efficacy in pooled CRISPR screens
+description: |
+  Determine which cells in a pooled CRISPR screen were effectively perturbed,
+  classifying them with Mixscape and scoring perturbation strength with Mixscale.
+link: https://pertpy.readthedocs.io/en/latest/tutorials/notebooks/perturbation_efficacy.html
+image: icon.svg
+primary_category: scRNA-seq
+order: 110
+modality:
+  - RNA
+tags:
+  - perturbation
+  - quality control
+  - visualization
+packages:
+  - pertpy
+  - scanpy
+  - anndata
+authors:
+  - Zethson

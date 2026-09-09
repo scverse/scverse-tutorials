@@ -1,0 +1,21 @@
+name: B-cell receptor analysis with scirpy
+description: |
+  Analyze 5k B cells with paired BCR sequencing: quality control, clonotype
+  definition, and inspection of somatic hypermutation and isotype usage.
+link: https://scirpy.scverse.org/en/latest/tutorials/tutorial_5k_bcr.html
+image: icon.svg
+primary_category: Adaptive immune cell receptor
+order: 20
+modality:
+  - AIRR
+  - RNA
+tags:
+  - quality control
+  - preprocessing
+  - visualization
+packages:
+  - scirpy
+  - mudata
+  - anndata
+authors:
+  - grst
