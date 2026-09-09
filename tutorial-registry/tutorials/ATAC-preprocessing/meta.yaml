@@ -1,6 +1,6 @@
 name: Processing chromatin accessibility
 description: |
-  Process scATAC-seq data as one half of a multimodal gene expression and chromatin accessibility analysis.
+  Chromatin accessibility processing in a joint RNA and ATAC analysis of 10k PBMCs.
 link: https://muon-tutorials.readthedocs.io/en/latest/single-cell-rna-atac/pbmc10k/2-Chromatin-Accessibility-Processing.html
 image: icon.png
 primary_category: ATAC-seq
