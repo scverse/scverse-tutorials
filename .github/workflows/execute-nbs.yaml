@@ -8,7 +8,7 @@ on:
       - "environment.yml"
 
 defaults:
-  run:  # add -l to GitHub’s defaults to make conda work
+  run: # add -l to GitHub’s defaults to make conda work
     shell: bash -leo pipefail {0}
 
 concurrency:
