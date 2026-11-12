@@ -25,7 +25,7 @@ Then if you do something like matrix multiplication, you will need double or eve
 ### How do I read my data into a `dask` array?
 
 {func}`anndata.experimental.read_elem_lazy` or {func}`anndata.experimental.read_lazy` can help you if you already have data on-disk that was written to the `anndata` file format.
-If you use {func}`dask.array.to_zarr`, the data _cannot_ be read in using `anndata`'s functionality as `anndata` will look for its {doc}`specified file format metadata <anndata:fileformat-prose>`.
+If you use {func}`dask.array.to_zarr`, the data *cannot* be read in using `anndata`’s functionality as `anndata` will look for its {doc}`specified file format metadata <anndata:fileformat-prose>`.
 
 If you need to implement custom io, generally we found that using {func}`dask.array.map_blocks` provides a nice way.
 See [our custom h5 io code] for an example.
@@ -44,7 +44,7 @@ If you need to implement the function yourself, see the next point.
 ### Custom block-wise array operations
 
 Sometimes you may want to do an operation on a an array that is implemented nowhere.
-Generally, we have found {func}`dask.array.map_blocks` to be versatile enough that most operations can be expressed on it. Click on the link to see `dask`'s own tutorial about the function.
+Generally, we have found {func}`dask.array.map_blocks` to be versatile enough that most operations can be expressed on it. Click on the link to see `dask`’s own tutorial about the function.
 
 Take this (simplified) example of calculating a gram matrix from {func}`scanpy.pp.pca` for sparse-in-dask:
 
@@ -68,7 +68,7 @@ These are the summed together to produce a single `(n_vars,n_vars)` matrix, whic
 
 Because `dask` does not implement matrix multiplication for sparse-in-dask, we do it ourselves.
 We use `map_blocks` over a CSR sparse-in-dask array where the chunking looks something like `(chunk_size, n_vars)`.
-When we compute the individual block's gram matrix, we add an axis via `[None, ...]` so that we can sum over that axis i.e., the `da.map_blocks` call produces a `(n_obs // chunk_size, n_vars, n_vars)` sized-matrix which is summed over the first dimension.
+When we compute the individual block’s gram matrix, we add an axis via `[None, ...]` so that we can sum over that axis i.e., the `da.map_blocks` call produces a `(n_obs // chunk_size, n_vars, n_vars)` sized-matrix which is summed over the first dimension.
 However, to make this work, we need to be very specific about how `da.map_blocks` expects its result to look like, done via `new_axis` and `chunks`.
 `new_axis` indicates that we are adding a single new axis at the front.
 The `chunks` argument specifies that the output of `da.map_blocks` should have `x.blocks.size` number of `(1, n_vars, n_vars)` matrixes.
@@ -85,7 +85,7 @@ This loads the entire dataset into memory while keeping the representation as a 
 Thus, lazy computation still works but only necessitates a single read into memory.
 The catch is that you need to have enough memory to use `persist`, but if you do it greatly speeds up the computation.
 
-### I'm out of memory, what now?
+### I’m out of memory, what now?
 
 You can always reduce the number of workers you use, which will cause more memory to be allocated per worker.
 Some algorithms may have limitations with loading all data onto a single node; see {issue}`dask/dask-ml#985` for an example.
